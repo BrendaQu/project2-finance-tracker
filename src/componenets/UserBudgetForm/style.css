@@ -1,16 +1,16 @@
-.user-form {
+.default-form {
     margin: 10px;
     padding: 20px 50px;
     border: 1px solid lightgray;
     background-color: white;
 }
 
-.user-form h2,
-.user-form p {
+.default-form h2,
+.default-form p {
     text-align: center;
 }
 
-.user-form h2 {
+.default-form h2 {
     color:#269255;
 }
 
@@ -31,6 +31,7 @@
 
 input[type="text"],
 input[type="date"],
+input[type="password"],
 select {
     text-align: center;
 }
