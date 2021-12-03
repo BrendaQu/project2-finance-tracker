@@ -1,16 +1,16 @@
-.budget-form {
+.user-form {
     margin: 10px;
     padding: 20px 50px;
     border: 1px solid lightgray;
     background-color: white;
 }
 
-.budget-form h2,
-.budget-form p {
+.user-form h2,
+.user-form p {
     text-align: center;
 }
 
-.budget-form h2 {
+.user-form h2 {
     color:#269255;
 }
 
@@ -29,13 +29,16 @@
     border: none;
 }
 
-input[type="text"]{
+input[type="text"],
+input[type="date"],
+select {
     text-align: center;
 }
 
 input[type="text"]:focus, 
 input[type="password"]:focus,
-input[type=""]:focus  {
+input[type="date"]:focus,
+input[type=""]:focus{
     border-color: #ffce39;
     box-shadow: 0 1px 1px #ffce39;
     outline: none;

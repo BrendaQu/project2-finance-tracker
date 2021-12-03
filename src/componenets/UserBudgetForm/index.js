@@ -25,7 +25,7 @@ const UserBudgetForm = () => {
             <div className="row">
                 <div className="col-lg-3"></div>
                 <div className="col-lg-6">
-                    <div className="wrapper budget-form">
+                    <div className="wrapper user-form">
                         <h2>Budget Form</h2>
                         <p>Below are you current budget for each category. Please enter any changes and click update.</p>
                         <form>

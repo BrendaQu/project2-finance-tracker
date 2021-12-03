@@ -1,1 +1,46 @@
 //Brenda
+import React from "react";
+
+const categories = ['Rent', 'Utilities', 'Groceries', 'Subscription', 'Entertainment', 'Dining Out', 'Shopping', 'Misc.'];
+
+const UserExpenseForm = () => {
+    return (
+        <div className="container">
+            <div className="row">
+                <div className="col-lg-3"></div>
+                <div className="col-lg-6">
+                    <div className="wrapper user-form">
+                        <h2> Expense Form </h2>
+                        <p>Enter your expense information below.</p>
+                        <form>
+                            <div className="form-group row">
+                                <label className="col-sm-4 col-form-label" htmlFor="">Date</label>
+                                <input type="date" className="form-control col-sm-8" name="Date" />
+                            </div>
+                            <div className="form-group row">
+                                <label className="col-sm-4 col-form-label" htmlFor="">Amount</label>
+                                <input type="text" className="form-control col-sm-8" name="Amount" />
+                            </div>
+                            <div className="form-group row">
+                                <label className="col-sm-4 col-form-label" htmlFor="">Category</label>
+                                <select className="form-control col-sm-8 select-cat" name="category">
+                                    {
+                                        categories.map(category => <option value={category}>{category}</option>)
+                                    }
+                                </select>
+                            </div>
+                            <div className="form-group row">
+                                <label className="col-sm-4 col-form-label" htmlFor="">Memo</label>
+                                <input type="text" className="form-control col-sm-8" name="Memo" />
+                            </div>
+                            <button type="submit" className="btn col-12 btn-success">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div className="col-lg-3"></div>
+            </div>
+        </div>
+    )
+}
+
+export default UserExpenseForm;
