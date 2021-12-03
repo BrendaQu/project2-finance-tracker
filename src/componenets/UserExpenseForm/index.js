@@ -1,9 +1,23 @@
 //Brenda
-import React from "react";
-
-const categories = ['Rent', 'Utilities', 'Groceries', 'Subscription', 'Entertainment', 'Dining Out', 'Shopping', 'Misc.'];
+import userEvent from "@testing-library/user-event";
+import React, {useState} from "react";
 
 const UserExpenseForm = () => {
+    const [expense, setExpense] = useState({
+        Date: '',
+        Amount: '',
+        Category: '',
+        Memo: ''
+    })
+
+    function onChangeHandler(event) {
+        setExpense({...expense,
+            [event.target.name]: event.target.value
+        })
+    }
+
+    const categories = ['Rent', 'Utilities', 'Groceries', 'Subscription', 'Entertainment', 'Dining Out', 'Shopping', 'Misc.'];
+   
     return (
         <div className="container">
             <div className="row">
@@ -15,15 +29,15 @@ const UserExpenseForm = () => {
                         <form>
                             <div className="form-group row">
                                 <label className="col-sm-4 col-form-label" htmlFor="">Date</label>
-                                <input type="date" className="form-control col-sm-8" name="Date" />
+                                <input type="date" className="form-control col-sm-8" name="Date" value={expense.Date} onChange={onChangeHandler}/>
                             </div>
                             <div className="form-group row">
                                 <label className="col-sm-4 col-form-label" htmlFor="">Amount</label>
-                                <input type="text" className="form-control col-sm-8" name="Amount" />
+                                <input type="text" className="form-control col-sm-8" name="Amount" value={expense.Amount} onChange={onChangeHandler}/>
                             </div>
                             <div className="form-group row">
                                 <label className="col-sm-4 col-form-label" htmlFor="">Category</label>
-                                <select className="form-control col-sm-8 select-cat" name="category">
+                                <select className="form-control col-sm-8 select-cat" name="Category" onChange={onChangeHandler}>
                                     {
                                         categories.map(category => <option value={category}>{category}</option>)
                                     }
@@ -31,7 +45,7 @@ const UserExpenseForm = () => {
                             </div>
                             <div className="form-group row">
                                 <label className="col-sm-4 col-form-label" htmlFor="">Memo</label>
-                                <input type="text" className="form-control col-sm-8" name="Memo" />
+                                <input type="text" className="form-control col-sm-8" name="Memo" value={expense.Memo} onChange={onChangeHandler}/>
                             </div>
                             <button type="submit" className="btn col-12 btn-success">Submit</button>
                         </form>
