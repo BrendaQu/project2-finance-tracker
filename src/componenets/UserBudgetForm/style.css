@@ -1,0 +1,42 @@
+.budget-form {
+    margin: 10px;
+    padding: 20px 50px;
+    border: 1px solid lightgray;
+    background-color: white;
+}
+
+.budget-form h2,
+.budget-form p {
+    text-align: center;
+}
+
+.budget-form h2 {
+    color:#269255;
+}
+
+.btn-success {
+    border: none !important;
+}
+
+.btn:hover, .btn:focus {
+    background-color:  #ffce39 !important;
+    border: none;
+
+}
+.btn-success:hover, .btn.btn-success:focus{
+    background-color:#ffce39 !important;
+    box-shadow: 0px 1px 1px #ffce39 !important;
+    border: none;
+}
+
+input[type="text"]{
+    text-align: center;
+}
+
+input[type="text"]:focus, 
+input[type="password"]:focus,
+input[type=""]:focus  {
+    border-color: #ffce39;
+    box-shadow: 0 1px 1px #ffce39;
+    outline: none;
+}
