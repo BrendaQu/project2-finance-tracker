@@ -39,7 +39,7 @@ const NavbarEmployee = () => {
                 </ul>
             </div>
 
-            <h2 className='ms-auto'>Example Employee</h2>
+            <h2 className='ms-auto danger'>Example Employee</h2>
         </nav>
     );
 };

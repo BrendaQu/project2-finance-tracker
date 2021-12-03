@@ -1,25 +1,30 @@
 //Milton
 import React from "react";
+import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 
 const NavbarDefault = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a className="navbar-brand" href="#">
-        Finance Manager
-      </a>
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <button type='button' className='btn btn-primary ms-auto'>Login</button>
-    </nav>
+    <Navbar expand="lg" variant="light">
+            <Container>
+                <Navbar.Brand href="#home">Finance Tracker</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto d-flex align-items-center justify-content-center ml-auto">
+                        <Nav.Link href="#home">Home</Nav.Link>
+                        <Nav.Link href="#link">Expense Form</Nav.Link>
+                        <Nav.Link href="#link">Budget Form</Nav.Link>
+                        <Nav.Link href="#link">Reports</Nav.Link>
+                        <NavDropdown title={
+                            <div className="profile-header">
+                                <img src={process.env.PUBLIC_URL + '/img/profile.jpg'} width="20" height="20" alt="profile" />
+                                <p>Name</p>
+                            </div>} id="navbarScrollingDropdown">
+                            <NavDropdown.Item href="#action3">Logout</NavDropdown.Item>
+                        </NavDropdown>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
   );
 };
 
