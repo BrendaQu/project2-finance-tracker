@@ -1,0 +1,35 @@
+.profile-header p {
+    font-size: 10px;
+}
+
+.profile-header img {
+    border-radius: 50%;
+}
+
+.me-auto {
+    text-align: center;
+}
+#navbarScrollingDropdown::after {
+    display: none;
+}
+
+.navbar-light {
+    background-color: #269255;
+    color: white;
+}
+
+.navbar-light .navbar-brand, 
+.navbar-light .nav-link,
+.navbar-light .navbar-toggler{
+    color: white !important;
+}
+
+.container {
+    height: auto;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link{
+    height: 50px;
+}
