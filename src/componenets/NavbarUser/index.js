@@ -5,7 +5,7 @@ import './style.css';
 
 const NavbarUser = () => {
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar expand="lg" variant="light">
             <Container>
                 <Navbar.Brand href="#home">Finance Tracker</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
