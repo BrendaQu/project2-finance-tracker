@@ -1,0 +1,18 @@
+.profile-header {
+    padding-top: 20px;
+}
+
+.profile-header p {
+    font-size: 10px;
+}
+
+.profile-header img {
+    border-radius: 50%;
+}
+
+.me-auto {
+    text-align: center;
+}
+#navbarScrollingDropdown::after {
+    display: none;
+}
