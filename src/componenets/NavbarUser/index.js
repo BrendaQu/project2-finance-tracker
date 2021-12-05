@@ -11,9 +11,9 @@ const NavbarUser = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto d-flex align-items-center justify-content-center ml-auto">
                         <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#link">Expense Form</Nav.Link>
-                        <Nav.Link href="#link">Budget Form</Nav.Link>
-                        <Nav.Link href="#link">Reports</Nav.Link>
+                        <Nav.Link href="userexpense">Expense Form</Nav.Link>
+                        <Nav.Link href="userbudget">Budget Form</Nav.Link>
+                        <Nav.Link href="#userreport">Reports</Nav.Link>
                         <NavDropdown title={
                             <div className="profile-header">
                                 <img src={process.env.PUBLIC_URL + '/img/profile.jpg'} width="20" height="20" alt="profile" />
