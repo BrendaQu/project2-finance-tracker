@@ -1,11 +1,11 @@
 import React from "react";
-import NavbarUser from '../../componenets/NavbarUser';
+import NavbarDefault from "../../componenets/NavbarDefault";
 import Register from '../../componenets/Register';
 
 const RegisterPage = () => {
     return (
         <>
-            <NavbarUser />
+            <NavbarDefault />
             <Register />
         </>
     )

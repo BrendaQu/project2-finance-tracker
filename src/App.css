@@ -173,11 +173,14 @@ input[type=""]:focus{
 .user-menu .btn {
   outline: #269255;
   border: 2px solid #269255;
+  padding: 0px;
 }
 
 .user-menu .btn a {
   color: #269255;
-  padding: 70px 10px;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 50px 10px 80px 10px;
 }
 
 .user-menu .btn:hover {
@@ -189,7 +192,7 @@ input[type=""]:focus{
 
 .user-menu a:hover {
   color: white;
-}
+} 
 
 /*User Report */
 .progress {

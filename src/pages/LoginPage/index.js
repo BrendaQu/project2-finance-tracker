@@ -1,11 +1,11 @@
 import React from "react";
-import NavbarUser from '../../componenets/NavbarUser';
 import Login from '../../componenets/Login';
+import NavbarDefault from "../../componenets/NavbarDefault";
 
 const LoginPage = () => {
     return (
         <>
-            <NavbarUser />
+            <NavbarDefault />
             <Login />
         </>
     )
