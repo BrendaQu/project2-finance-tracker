@@ -1,46 +1,31 @@
 //Milton
 import React from "react";
+import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 
 const NavbarEmployee = () => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a className="navbar-brand" href="#">
-                Finance Manager
-            </a>
-            <button
-                className="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span className="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Account Approval<span class="sr-only"></span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Account Deletion<span class="sr-only"></span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Reports<span class="sr-only"></span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">User Search<span class="sr-only"></span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Logout<span class="sr-only"></span></a>
-                    </li>
-                </ul>
-            </div>
-
-            <h2 className='ms-auto danger'>Example Employee</h2>
-        </nav>
+            <Navbar expand="lg" variant="light">
+                <Container>
+                    <Navbar.Brand href="#home">Finance Tracker</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="me-auto d-flex align-items-center justify-content-center ml-auto">
+                            <Nav.Link href="/EmpMenu">Home</Nav.Link>
+                            <Nav.Link href="/EmpApprove">Account Approval</Nav.Link>
+                            <Nav.Link href="/EmpDelete">Deletion Request</Nav.Link>
+                            <Nav.Link href="/EmpSearch">Employee Search</Nav.Link>
+                            <Nav.Link href="/EmpReport">Reports</Nav.Link>
+                            <NavDropdown title={
+                                <div className="profile-header">
+                                    <img src={process.env.PUBLIC_URL + '/img/profile.jpg'} width="20" height="20" alt="profile" />
+                                    <p>Name</p>
+                                </div>} id="navbarScrollingDropdown">
+                                <NavDropdown.Item href="#action3">Logout</NavDropdown.Item>
+                            </NavDropdown>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
     );
 };
 

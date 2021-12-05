@@ -13,7 +13,11 @@ code {
 }
 
 .doughnut {
-  width:33%;
+
   margin-top: 20px;
-  margin-left: 25%;
+  
+}
+
+.table {
+  padding: 1rem, 5%;
 }
