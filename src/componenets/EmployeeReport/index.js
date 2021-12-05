@@ -1,9 +1,23 @@
 //Milton
 import React from "react";
-import { Doughnut } from "react-chartjs-2";
-import { Chart, ArcElement } from 'chart.js'
+import { Doughnut, Bar } from "react-chartjs-2";
+import { Chart, registerables, registerablesbles } from 'chart.js'
 
-Chart.register(ArcElement);
+
+Chart.register(...registerables);
+Chart.overrides.doughnut = {
+    plugins: {
+        title: {
+            display: false,
+            text: "Please Work"
+        },
+        legend: {
+            display: false,
+            position: "right"
+        }
+    }
+    
+}
 
 const EmployeeReport = () => {
 
@@ -19,22 +33,24 @@ const EmployeeReport = () => {
     };
 
     const options = {
-        plugin: {
+        plugins: {
             title: {
-                display: true,
+                display: false,
                 text: "Please Work"
             },
             legend: {
-                display: true,
-                position: "right"
+                display: false,
+                position: "bottom"
             }
         }
+
     }
 
 
     return (
         <div className='doughnut'>
             <Doughnut data={chartData} options={options} />
+            <Bar data={chartData} options={options} />
         </div>
     )
 }
