@@ -4,6 +4,7 @@ import RegisterPage from './pages/RegisterPage';
 import UserBudgetPage from './pages/UserBudgetPage';
 import UserExpensePage from './pages/UserExpensePage';
 import UserMenuPage from './pages/UserMenuPage';
+import UserReportPage from './pages/UserReportPage';
 //import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
         {/* <UserExpensePage /> */}
         {/* <LoginPage /> */}
         {/* <RegisterPage /> */}
-        <UserMenuPage />
+        {/* <UserMenuPage /> */}
+        <UserReportPage />
     </div>
   );
 }

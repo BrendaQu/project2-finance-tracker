@@ -1,6 +1,6 @@
 .user-menu {
     width: 100%;
-    height: 250px;
+    height: 350px;
     display: flex;
     justify-content: center;
     padding: 50px;
@@ -30,6 +30,10 @@
 
 .user-menu a:hover {
     color: white;
+}
+
+.progress {
+    height: 30px !important;
 }
 
 .progress-bar.bar-rent {
