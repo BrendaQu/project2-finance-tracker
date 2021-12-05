@@ -13,7 +13,7 @@ const NavbarUser = () => {
                         <Nav.Link href="#home">Home</Nav.Link>
                         <Nav.Link href="userexpense">Expense Form</Nav.Link>
                         <Nav.Link href="userbudget">Budget Form</Nav.Link>
-                        <Nav.Link href="#userreport">Reports</Nav.Link>
+                        <Nav.Link href="userreport">Reports</Nav.Link>
                         <NavDropdown title={
                             <div className="profile-header">
                                 <img src={process.env.PUBLIC_URL + '/img/profile.jpg'} width="20" height="20" alt="profile" />
