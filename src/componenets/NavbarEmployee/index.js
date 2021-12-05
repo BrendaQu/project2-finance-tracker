@@ -9,7 +9,7 @@ const NavbarEmployee = () => {
                     <Navbar.Brand href="#home">Finance Tracker</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto d-flex align-items-center justify-content-center ml-auto">
+                        <Nav className="d-flex align-items-center justify-content-center ms-auto">
                             <Nav.Link href="/EmpMenu">Home</Nav.Link>
                             <Nav.Link href="/EmpApprove">Account Approval</Nav.Link>
                             <Nav.Link href="/EmpDelete">Deletion Request</Nav.Link>
