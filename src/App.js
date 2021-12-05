@@ -13,9 +13,11 @@ import UserBudgetPage from './pages/UserBudgetPage';
 import UserExpensePage from './pages/UserExpensePage';
 import UserMenuPage from './pages/UserMenuPage';
 import UserReportPage from './pages/UserReportPage';
+import Footer from './componenets/Footer';
 
 function App() {
   return (
+    <div>
     <Router>
       <div>
         <Routes>
@@ -35,6 +37,8 @@ function App() {
         </Routes>
       </div>
     </Router>
+    <Footer />
+    </div>
   );
 }
 

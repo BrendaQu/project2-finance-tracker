@@ -9,7 +9,6 @@ const UserReportPage = () => {
         <>
             <NavbarUser />
             <UserReport />
-            <Footer />
         </>
     )
 }

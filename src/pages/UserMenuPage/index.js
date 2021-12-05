@@ -8,7 +8,6 @@ const UserMenuPage = () => {
         <>
             <NavbarUser />
             <UserMenu />
-            <Footer />
         </>
     )
 }

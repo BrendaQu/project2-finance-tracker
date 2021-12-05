@@ -8,7 +8,6 @@ const UserBudgetPage = () => {
         <>
             <NavbarUser />
             <UserBudgetForm />
-            <Footer />
         </>
     )
 }

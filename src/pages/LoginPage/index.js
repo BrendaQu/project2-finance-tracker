@@ -8,7 +8,6 @@ const LoginPage = () => {
         <>
             <NavbarUser />
             <Login />
-            <Footer />
         </>
     )
 }
