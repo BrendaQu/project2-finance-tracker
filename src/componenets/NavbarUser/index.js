@@ -1,7 +1,6 @@
 //Brenda
 import React from "react";
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
-import './style.css';
 
 const NavbarUser = () => {
     return (

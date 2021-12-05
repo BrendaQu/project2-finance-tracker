@@ -1,6 +1,5 @@
 //Brenda
 import React from "react";
-import "./style.css";
 
 const UserMenu = () => {
     return (
