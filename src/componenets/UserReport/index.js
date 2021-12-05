@@ -4,8 +4,8 @@ import React from "react";
 const UserReport = () => {
     return (
         <div className="container">
-            <h3>Welcome, Name</h3>
-            <p>Log your expense, update your budget, or view your monthly reports.</p>
+            <h3>Report</h3>
+            <p>View this month's report and progress bar below.</p>
             <ul class="legend">
                 <li><span class="legend-rent"></span> Rent</li>
                 <li><span class="legend-utl"></span> Utilities</li>
@@ -40,6 +40,60 @@ const UserReport = () => {
                 <div class="progress-bar bar-shop" role="progressbar" style={{ width: '8%' }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$234</div>
                 <div class="progress-bar bar-misc" role="progressbar" style={{ width: '7%' }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$232</div>
             </div>
+            <br />
+            <h4>Budget vs Actual Spending</h4>
+            <table class="table table-hover table-bordered table-striped" >
+                <thead>
+                    <tr>
+                        <th scope="col">Category</th>
+                        <th scope="col">Budget</th>
+                        <th scope="col">Actual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Rent</th>
+                        <td>$1,200</td>
+                        <td>$1,200</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Utilities</th>
+                        <td>$300</td>
+                        <td>$300</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Groceries</th>
+                        <td>$400</td>
+                        <td>$350</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Subscription</th>
+                        <td>$100</td>
+                        <td>$100</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Entertainment</th>
+                        <td>$200</td>
+                        <td>$357</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Dining Out</th>
+                        <td>$200</td>
+                        <td>$332</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Shopping</th>
+                        <td>$150</td>
+                        <td>$234</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Misc</th>
+                        <td>$100</td>
+                        <td>$232</td>
+                    </tr>
+                </tbody>
+            </table>
+
         </div>
     )
 }
