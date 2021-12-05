@@ -93,6 +93,67 @@ const UserReport = () => {
                     </tr>
                 </tbody>
             </table>
+            <h4>Expense Logs</h4>
+            <table class="table table-hover table-bordered table-striped" >
+                <thead>
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Memo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12/01/2021</td>
+                        <td>$1,200</td>
+                        <td>Rent</td>
+                        <td>Rent sent to landlord</td>
+                    </tr>
+                    <tr>
+                        <td>12/02/2021</td>
+                        <td>$300</td>
+                        <td>Utilities</td>
+                        <td>Utitlies sent</td>
+                    </tr>
+                    <tr>
+                        <td>12/05/21</td>
+                        <td>Groceries</td>
+                        <td>$125</td>
+                        <td>Kroger</td>
+                    </tr>
+                    <tr>
+                        <td>12/03/2021</td>
+                        <td>Subscription</td>
+                        <td>$10</td>
+                        <td>Netflix</td>
+                    </tr>
+                    <tr>
+                        <td>12/04/2021</td>
+                        <td>Entertainment</td>
+                        <td>$80</td>
+                        <td>Concert</td>
+                    </tr>
+                    <tr>
+                        <td>12/07/2021</td>
+                        <td>Dining Out</td>
+                        <td>$50</td>
+                        <td>Chili's</td>
+                    </tr>
+                    <tr>
+                        <td>12/05/2021</td>
+                        <td>Shopping</td>
+                        <td>$90</td>
+                        <td>Clothing Store</td>
+                    </tr>
+                    <tr>
+                        <td>12/06/2021</td>
+                        <td>Misc</td>
+                        <td>$25</td>
+                        <td>Gift card</td>
+                    </tr>
+                </tbody>
+            </table>
 
         </div>
     )
