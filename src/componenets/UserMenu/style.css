@@ -31,3 +31,81 @@
 .user-menu a:hover {
     color: white;
 }
+
+.progress-bar.bar-rent {
+    background-color: #7ABA30;
+}
+
+.progress-bar.bar-utl {
+    background-color: #ffce39;
+}
+
+.progress-bar.bar-groc {
+    background-color: #f3994a;
+}
+
+.progress-bar.bar-subs {
+    background-color: #266482;
+}
+.progress-bar.bar-ent{
+    background-color: #6832AD;
+}
+
+.progress-bar.bar-din {
+    background-color: #F3524A;
+}
+
+.progress-bar.bar-shop {
+    background-color: #2E8B94;
+}
+
+.progress-bar.bar-misc {
+    background-color: #AA26A4;
+}
+
+.legend {
+    list-style: none;
+    height: 30px;
+    padding: 10px;
+    margin: auto;
+}
+.legend li { 
+    float: left; 
+    margin-right: 10px;
+    padding: 10px; 
+}
+.legend span {
+     border: 1px solid #ccc; 
+     float: left; 
+     width: 12px; 
+     height: 12px; 
+     margin: 6px; }
+
+.legend .legend-rent { 
+    background-color: #7ABA30;
+}
+.legend .legend-utl { 
+    background-color: #ffce39;
+}
+.legend .legend-groc { 
+    background-color: #f3994a;
+}
+.legend .legend-subs { 
+    background-color: #266482;
+}
+.legend .legend-ent { 
+    background-color: #6832AD;
+}
+.legend .legend-din { 
+    background-color: #F3524A;
+}
+.legend .legend-shop { 
+    background-color: #2E8B94;
+}
+.legend .legend-misc { 
+    background-color: #AA26A4;
+}
+
+h3 {
+    color: #269255;
+}
