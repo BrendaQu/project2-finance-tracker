@@ -52,6 +52,7 @@ const Register = () => {
                                     <label className="form-check-label" for="female">Female </label>
                                 </div>
                             </div>
+                            <br />
                             <div className="form-group">
                                 <label htmlFor="">Country</label>
                                 <select className="form-control" name="country">
@@ -60,7 +61,7 @@ const Register = () => {
                                     }
                                 </select>
                             </div>
-
+                            <br />
                             <button type="submit" className="btn btn-success col-12">Register</button>
                         </form>
                     </div>

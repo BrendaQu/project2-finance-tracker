@@ -37,7 +37,7 @@ const UserExpenseForm = () => {
                             </div>
                             <div className="form-group row">
                                 <label className="col-sm-4 col-form-label" htmlFor="">Category</label>
-                                <select className="form-control col-sm-8 select-cat" name="Category" onChange={onChangeHandler}>
+                                <select className="form-control col-sm-8 selectpicker" name="Category" onChange={onChangeHandler}>
                                     {
                                         categories.map(category => <option value={category}>{category}</option>)
                                     }
