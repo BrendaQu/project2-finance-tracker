@@ -315,3 +315,23 @@ h3, h4 {
 .btn.btn-success.btn.approval-btn {
   background-color: #269255;
 }
+
+/*Landing Page */
+.carousel-inner {
+  height: 455px;
+} 
+
+.carousel-caption{
+  text-align: center;
+  top: 100px;
+  bottom: auto;
+} 
+
+.carousel-caption h1 {
+  font-size: 70px;
+  color: #FEFFFF;
+}
+.carousel-caption p {
+  color: #ffce39;
+  font-size:25px;
+}

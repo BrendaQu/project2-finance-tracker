@@ -20,7 +20,7 @@ const NavbarEmployee = () => {
                                     <img src={process.env.PUBLIC_URL + '/img/profile.jpg'} width="20" height="20" alt="profile" />
                                     <p>Name</p>
                                 </div>} id="navbarScrollingDropdown">
-                                <NavDropdown.Item href="index">Logout</NavDropdown.Item>
+                                <NavDropdown.Item href="/">Logout</NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>

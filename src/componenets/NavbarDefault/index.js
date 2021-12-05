@@ -10,7 +10,7 @@ const NavbarDefault = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="d-flex align-items-center justify-content-center ms-auto">
-            <Nav.Link href="index">Home</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="register">Register</Nav.Link>
             <Nav.Link href="login">Login</Nav.Link>
           </Nav>

@@ -21,7 +21,7 @@ function App() {
     <Router>
       <div>
         <Routes>
-          <Route path='/index' element={<LandingPage />} />
+          <Route path='/' element={<LandingPage />} />
           <Route path='/EmpApprove' element={<EmployeeApprovalPage />} />
           <Route path='/EmpDelete' element={<EmployeeDeletePage />} />
           <Route path='/EmpMenu' element={<EmployeeMenuPage />} />

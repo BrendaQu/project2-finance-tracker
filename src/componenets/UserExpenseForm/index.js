@@ -47,6 +47,7 @@ const UserExpenseForm = () => {
                                 <label className="col-sm-4 col-form-label" htmlFor="">Memo</label>
                                 <input type="text" className="form-control col-sm-8" name="Memo" value={expense.Memo} onChange={onChangeHandler}/>
                             </div>
+                            <br />
                             <button type="submit" className="btn col-12 btn-success">Submit</button>
                         </form>
                     </div>
