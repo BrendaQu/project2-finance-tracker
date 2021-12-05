@@ -6,7 +6,7 @@ const Login = () => {
         <div className="container">
             <div className="row">
                 <div className="col-lg-3"></div>
-                <div className="col-lg-6">
+                <div className="col-lg-6 min-height">
                     <div className="wrapper default-form">
                         <h2>Login</h2>
                         <form>
