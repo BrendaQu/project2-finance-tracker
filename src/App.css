@@ -285,3 +285,12 @@ h3, h4 {
 .min-height {
   height: 455px;
 }
+
+/* Approval buttons */
+.btn.approval-btn {
+  width: 90px;
+}
+
+.btn.btn-success.btn.approval-btn {
+  background-color: #269255;
+}

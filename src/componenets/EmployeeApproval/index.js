@@ -27,8 +27,8 @@ const EmployeeApproval = () => {
                         <td>Male</td>
                         <td>USA</td>
                         <td>
-                            <button type="button" class="btn btn-primary">Approve</button>
-                            <button type="button" class="btn btn-danger">Deny</button>
+                            <button type="button" class="btn btn-success approval-btn">Approve</button>&nbsp;
+                            <button type="button" class="btn btn-danger approval-btn">Deny</button>
                         </td>
                     </tr>
                     <tr>
@@ -40,8 +40,8 @@ const EmployeeApproval = () => {
                         <td>Male</td>
                         <td>USA</td>
                         <td>
-                            <button type="button" class="btn btn-primary">Approve</button>
-                            <button type="button" class="btn btn-danger">Deny</button>
+                            <button type="button" class="btn btn-success approval-btn">Approve</button>&nbsp;
+                            <button type="button" class="btn btn-danger approval-btn">Deny</button>
                         </td>
                     </tr>
                     <tr>
@@ -53,8 +53,8 @@ const EmployeeApproval = () => {
                         <td>Male</td>
                         <td>USA</td>
                         <td>
-                            <button type="button" class="btn btn-primary">Approve</button>
-                            <button type="button" class="btn btn-danger">Deny</button>
+                            <button type="button" class="btn btn-success approval-btn">Approve</button>&nbsp;
+                            <button type="button" class="btn btn-danger approval-btn">Deny</button>
                         </td>
                     </tr>
                 </tbody>
