@@ -22,7 +22,7 @@ const UserExpenseForm = () => {
         <div className="container">
             <div className="row">
                 <div className="col-lg-3"></div>
-                <div className="col-lg-6 min-height">
+                <div className="col-lg-6">
                     <div className="wrapper default-form">
                         <h2> Expense Form </h2>
                         <p>Enter your expense information below.</p>
