@@ -3,7 +3,7 @@ import React from "react"
 
 const EmployeeDelete = () => {
     return (
-        <div>
+        <div className='container'>
             <table class="table">
                 <thead>
                     <tr>

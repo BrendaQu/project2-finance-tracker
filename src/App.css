@@ -335,3 +335,8 @@ h3, h4 {
   color: #ffce39;
   font-size:25px;
 }
+
+.bar-graph {
+  width: 89%;
+  margin:auto;
+}

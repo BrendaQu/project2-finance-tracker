@@ -6,7 +6,7 @@ const EmployeeMenuPage = () => {
     return (
         <div>
             <NavbarEmployee />
-            {/*<EmployeeMenu />*/}
+            <EmployeeMenu />
         </div>
     )
 }

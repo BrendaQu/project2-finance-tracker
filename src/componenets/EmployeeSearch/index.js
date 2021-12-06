@@ -25,7 +25,7 @@ const EmployeeSearch = () => {
 
     return (
 
-        <div>
+        <div className='container'>
             <div className="input-group rounded w-25 p-3">
                 <input type="search" className="form-control rounded" placeholder="Enter UserId" aria-label="Search"
                     aria-describedby="search-addon" onKeyUp={filterTable} id='myInput'/>

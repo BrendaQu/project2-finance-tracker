@@ -3,7 +3,7 @@ import React from "react"
 
 const EmployeeApproval = () => {
     return (
-        <div>
+        <div className="container">
             <table class="table">
                 <thead>
                     <tr>
