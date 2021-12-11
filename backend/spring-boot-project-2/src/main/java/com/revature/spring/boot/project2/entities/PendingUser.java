@@ -31,5 +31,5 @@ public class PendingUser{
     private String password;
     private String gender;
     private String country;
-    private enum type {employee, regular}
+    private String type;
 }
