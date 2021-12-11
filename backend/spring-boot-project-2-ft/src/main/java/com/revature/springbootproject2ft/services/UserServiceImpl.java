@@ -1,7 +1,7 @@
-package com.revature.spring.boot.project2.services;
+package com.revature.springbootproject2ft.services;
 
-import com.revature.spring.boot.project2.entities.User;
-import com.revature.spring.boot.project2.repositories.UserRepository;
+import com.revature.springbootproject2ft.entities.User;
+import com.revature.springbootproject2ft.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +11,7 @@ import java.util.Optional;
 @Service
 public class UserServiceImpl implements UserService {
 
+    @Autowired
     private UserRepository repository;
 
     @Override
