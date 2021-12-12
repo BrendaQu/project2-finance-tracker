@@ -12,7 +12,7 @@ Allows users to enter expenses and see monthly totals on their expenditures.  Us
 - Bootstrap
 - Spring Boot
 - Hibernate 
-- MySql 
+- MySQL
 
 ## Features Implemented
 - New Users can register for account
