@@ -9,7 +9,7 @@ import java.util.List;
 public interface BudgetService {
     public Budget addBudget(long id, Budget budget);
     public List<Budget> getAllBudgets();
-    public Budget getBudgetById(long id);
+    public Budget getBudgetByUserId(long user_id);
     public void deleteBudget(long id);
-    public Budget updateBudget(long id, Budget updateBudget);
+    public Budget updateBudgetByUserId(long user_id, Budget updateBudget);
 }
