@@ -1,5 +1,7 @@
 package com.revature.springbootproject2ft.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,10 +16,11 @@ import java.math.BigDecimal;
 @Table(name = "tbl_budgets")
 public class Budget {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long budgetId;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="userId", nullable = false)
+    @JsonBackReference
     private User user;
     private BigDecimal rent;
     private BigDecimal utilities;
