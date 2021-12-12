@@ -33,6 +33,10 @@ public class User {
     @JsonManagedReference
     private List<Budget> budget = new ArrayList<Budget>();
 
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
+    @JsonManagedReference
+    private List<Expense> expense = new ArrayList<Expense>();
+
     public Long getUserId() {
         return userId;
     }
@@ -111,5 +115,13 @@ public class User {
 
     public void setBudget(List<Budget> budget) {
         this.budget = budget;
+    }
+
+    public List<Expense> getExpense() {
+        return expense;
+    }
+
+    public void setExpense(List<Expense> expense) {
+        this.expense = expense;
     }
 }
