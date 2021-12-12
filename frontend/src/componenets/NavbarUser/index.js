@@ -3,6 +3,9 @@ import React from "react";
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 
 const NavbarUser = () => {
+
+    const name = sessionStorage.getItem("name")
+
     return (
         <Navbar expand="lg" variant="light">
             <Container>
@@ -17,9 +20,9 @@ const NavbarUser = () => {
                         <NavDropdown title={
                             <div className="profile-header">
                                 <img src={process.env.PUBLIC_URL + '/img/profile.jpg'} width="20" height="20" alt="profile" />
-                                <p>Name</p>
+                                <p>{name}</p>
                             </div>} id="navbarScrollingDropdown">
-                            <NavDropdown.Item href="/">Logout</NavDropdown.Item>
+                            <NavDropdown.Item href="/" onClick={sessionStorage.clear()}>Logout</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>

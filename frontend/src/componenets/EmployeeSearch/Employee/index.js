@@ -3,7 +3,6 @@ import axios from "axios";
 
 const Employee = (props) => {
     
-    
     return(
         <tr>
             {console.log(props.data)}
