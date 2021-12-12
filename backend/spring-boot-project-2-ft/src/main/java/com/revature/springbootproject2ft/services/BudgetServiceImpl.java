@@ -32,8 +32,13 @@ public class BudgetServiceImpl implements BudgetService{
 
     @Override
     public Budget getBudgetByUserId(long user_id) {
-        Optional<User> user = userRepository.findById(user_id);
-        return (Budget) user.get().getBudget().get(0);
+        User user = userRepository.findById(user_id).get();
+
+        if(user.getBudget().isEmpty()){
+            return null;
+        } else {
+            return (Budget) user.getBudget().get(0);
+        }
     }
 
     @Override
