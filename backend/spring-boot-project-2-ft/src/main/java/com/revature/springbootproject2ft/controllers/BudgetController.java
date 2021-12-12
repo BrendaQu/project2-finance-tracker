@@ -13,8 +13,8 @@ public class BudgetController {
     @Autowired
     private BudgetService service;
 
-    @PostMapping("/budgets/{id}")
-    public Budget saveBudget(@PathVariable("id") long id, @RequestBody Budget budget) {
+    @PostMapping("/budgets/{user_id}")
+    public Budget saveBudget(@PathVariable("user_id") long id, @RequestBody Budget budget) {
         return service.addBudget(id, budget);
     }
 
@@ -23,9 +23,9 @@ public class BudgetController {
         return service.getAllBudgets();
     }
 
-    @GetMapping("/budgets/{id}")
-    public Budget getBudgetById(@PathVariable("id") long id){
-        return service.getBudgetById(id);
+    @GetMapping("/budgets/{user_id}")
+    public Budget getBudgetByUserId(@PathVariable("user_id") long id){
+        return service.getBudgetByUserId(id);
     }
 
     @DeleteMapping("/budgets/{id}")
@@ -34,9 +34,9 @@ public class BudgetController {
         return "record deleted successfully";
     }
 
-    @PutMapping("/budgets/{id}")
-    public String updateBudget(@PathVariable("id") long id, @RequestBody Budget budget){
-        service.updateBudget(id, budget);
+    @PutMapping("/budgets/{user_id}")
+    public String updateBudget(@PathVariable("user_id") long id, @RequestBody Budget budget){
+        service.updateBudgetByUserId(id, budget);
         return "record updated successfully";
     }
 }

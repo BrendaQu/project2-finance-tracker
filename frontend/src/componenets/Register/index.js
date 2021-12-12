@@ -10,7 +10,7 @@ const Register = () => {
         password: '',
         phone: '',
         gender: '',
-        country: '',
+        country: 'United States',
         type: "regular"
     })
 

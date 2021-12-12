@@ -31,9 +31,9 @@ public class BudgetServiceImpl implements BudgetService{
     }
 
     @Override
-    public Budget getBudgetById(long id) {
-        Optional<Budget> budget = repository.findById(id);
-        return budget.get();
+    public Budget getBudgetByUserId(long user_id) {
+        Optional<User> user = userRepository.findById(user_id);
+        return (Budget) user.get().getBudget().get(0);
     }
 
     @Override
@@ -42,8 +42,10 @@ public class BudgetServiceImpl implements BudgetService{
     }
 
     @Override
-    public Budget updateBudget(long id, Budget updateBudget) {
-        Budget budgetDB = repository.findById(id).get();
+    public Budget updateBudgetByUserId(long user_id, Budget updateBudget) {
+        User user = userRepository.findById(user_id).get();
+        long budget_id = user.getBudget().get(0).getBudgetId();
+        Budget budgetDB = repository.findById(budget_id).get();
         budgetDB.setRent(updateBudget.getRent());
         budgetDB.setUtilities(updateBudget.getUtilities());
         budgetDB.setGroceries(updateBudget.getGroceries());
@@ -52,6 +54,7 @@ public class BudgetServiceImpl implements BudgetService{
         budgetDB.setDining(updateBudget.getDining());
         budgetDB.setDining(updateBudget.getShopping());
         budgetDB.setMisc(updateBudget.getMisc());
-        return budgetDB;
+
+        return repository.save(budgetDB);
     }
 }
