@@ -1,7 +1,15 @@
 //Brenda
 import React from "react";
+import { useDispatch } from 'react-redux';
 
 const Login = () => {
+
+    const dispatch = useDispatch();
+
+    const onSubmitHandler = () => {
+        
+    }
+
     return (
         <div className="container">
             <div className="row">
@@ -9,7 +17,7 @@ const Login = () => {
                 <div className="col-lg-6 min-height">
                     <div className="wrapper default-form">
                         <h2>Login</h2>
-                        <form>
+                        <form method='post' onSubmit={onSubmitHandler}>
                             <div className="form-group row">
                                 <input type="text" className="form-control" name="Email" placeholder="email"/>
                             </div>

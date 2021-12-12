@@ -1,13 +1,16 @@
 //Brenda
 import userEvent from "@testing-library/user-event";
+import axios from "axios";
 import React, {useState} from "react";
+import { useSelector } from 'react-redux';
 
 const UserExpenseForm = () => {
     const [expense, setExpense] = useState({
         Date: '',
         Amount: '',
         Category: '',
-        Memo: ''
+        Memo: '',
+        userId: useSelector(state => state.regularId)
     })
 
     function onChangeHandler(event) {
@@ -16,7 +19,17 @@ const UserExpenseForm = () => {
         })
     }
 
-    const categories = ['Rent', 'Utilities', 'Groceries', 'Subscription', 'Entertainment', 'Dining Out', 'Shopping', 'Misc.'];
+    const onClickHandler = () =>{
+        axios.post("http://localhost:9007/users", expense)
+        .then((response) => {setExpense(response)})
+        .catch((error) => console.error(error))
+    }
+
+    function test() {
+        console.log(expense)
+    }
+
+    const categories = ['','Rent', 'Utilities', 'Groceries', 'Subscription', 'Entertainment', 'Dining Out', 'Shopping', 'Misc.'];
    
     return (
         <div className="container">
@@ -26,7 +39,7 @@ const UserExpenseForm = () => {
                     <div className="wrapper default-form">
                         <h2> Expense Form </h2>
                         <p>Enter your expense information below.</p>
-                        <form>
+                        <form method="post" onClick={onClickHandler}>
                             <div className="form-group row">
                                 <label className="col-sm-4 col-form-label" htmlFor="">Date</label>
                                 <input type="date" className="form-control col-sm-8" name="Date" value={expense.Date} onChange={onChangeHandler}/>
@@ -50,6 +63,7 @@ const UserExpenseForm = () => {
                             <br />
                             <button type="submit" className="btn col-12 btn-success">Submit</button>
                         </form>
+                        <button type="submit" className="btn col-12 btn-success" onClick={test}>Test</button>
                     </div>
                 </div>
                 <div className="col-lg-3"></div>
