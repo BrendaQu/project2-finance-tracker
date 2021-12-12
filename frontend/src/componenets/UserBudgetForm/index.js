@@ -14,6 +14,7 @@ const UserBudgetForm = () => {
         misc: '100'
     })
 
+    //Need to update user_id, right now it's hard coded
     function onSubmitHandler(e) {
         axios.get('http://localhost:9007/budgets/2', budget)
         .then(response => {
