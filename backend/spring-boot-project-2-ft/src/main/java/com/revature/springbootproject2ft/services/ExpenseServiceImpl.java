@@ -33,9 +33,9 @@ public class ExpenseServiceImpl implements ExpenseService{
     }
 
     @Override
-    public Expense getExpenseById(long id) {
-        Optional<Expense> expense = repository.findById(id);
-        return expense.get();
+    public List <Expense> getExpenseByUserId(long user_id) {
+        User user = userRepository.findById(user_id).get();
+            return user.getExpense();
     }
 
     @Override

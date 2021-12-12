@@ -14,8 +14,8 @@ public class ExpenseController {
     @Autowired
     private ExpenseService service;
 
-    @PostMapping("/expenses/{id}")
-    public Expense saveExpense(@PathVariable("id") long id, @RequestBody Expense expense){
+    @PostMapping("/expenses/{user_id}")
+    public Expense saveExpense(@PathVariable("user_id") long id, @RequestBody Expense expense){
         return service.addExpense(id, expense);
     }
 
@@ -24,9 +24,10 @@ public class ExpenseController {
         return service.getAllExpenses();
     }
 
-    @GetMapping("/expenses/{id}")
-    public Expense getExpenseById(@PathVariable("id") long id){
-        return service.getExpenseById(id);
+    @GetMapping("/expenses/{user_id}")
+    public List<Expense> getExpenseByUserId(@PathVariable("user_id") long id){
+
+        return service.getExpenseByUserId(id);
     }
 
     @DeleteMapping("/expenses/{id}")
