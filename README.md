@@ -7,6 +7,7 @@ Allows users to enter expenses and see monthly totals on their expenditures.  Us
 - Java
 - Javascript
 - ReactJS
+- Redux
 - HTML / CSS
 - Bootstrap
 - Spring Boot
