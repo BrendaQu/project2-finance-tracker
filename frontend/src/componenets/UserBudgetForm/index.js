@@ -19,7 +19,7 @@ const UserBudgetForm = () => {
         axios.get('http://localhost:9007/budgets/' + sessionStorage.getItem("userId"), budget)
         .then(response => {
             if(!response.data || response.data.length == 0){
-                axios.post('http://localhost:9007/budgets/2', budget)
+                axios.post('http://localhost:9007/budgets/' + sessionStorage.getItem("userId"), budget)
                 .then(response => {
                     window.location.pathname = ('/userbudget')
                     setBudget(response.data)
