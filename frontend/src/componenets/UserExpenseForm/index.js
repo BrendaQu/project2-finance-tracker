@@ -21,7 +21,7 @@ const UserExpenseForm = () => {
     }
 
     const onSubmitHandler = () =>{
-        axios.post("http://localhost:9007/expenses/2", expense)
+        axios.post("http://localhost:9007/expenses/" + sessionStorage.getItem("userId"), expense)
         .then((response) => {
             window.location.pathname = ('/userexpense')
             setExpense(response.data)

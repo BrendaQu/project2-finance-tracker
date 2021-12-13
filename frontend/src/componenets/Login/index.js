@@ -28,13 +28,14 @@ const Login = () => {
         e.preventDefault()
         for (let i = 0; i < user.length; i++) {
             if(login.email === user[""+i].email && login.password === user[""+i].password) {
+                
+                if(user[""+i].type === "employee") {
+                    //window.location.pathname = ("/EmpMenu")
+                } else {
+                    //window.location.pathname = ("/usermenu")
+                }
                 sessionStorage.setItem("userId", user[""+i].userId)
                 sessionStorage.setItem("name", user[""+i].firstName)
-                if(user[""+i].type === "employee") {
-                    window.location.pathname = ('/EmpMenu')
-                } else {
-                    window.location.pathname = ('/usermenu')
-                }
                 return
             }
         }

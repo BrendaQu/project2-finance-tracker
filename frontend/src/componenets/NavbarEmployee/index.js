@@ -1,7 +1,7 @@
 //Milton
 import React from "react";
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
+
 
 const NavbarEmployee = () => {
 
@@ -23,7 +23,7 @@ const NavbarEmployee = () => {
                                     <img src={process.env.PUBLIC_URL + '/img/profile.jpg'} width="20" height="20" alt="profile" />
                                     <p>{name}</p>
                                 </div>} id="navbarScrollingDropdown">
-                                <NavDropdown.Item href="/" onClick={sessionStorage.clear()}>Logout</NavDropdown.Item>
+                                <NavDropdown.Item href="/">Logout</NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>
