@@ -10,7 +10,7 @@ const UserReport = () => {
     const[expense, setExpense] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:9007/budgets/2")
+        axios.get("http://localhost:9007/budgets/" + sessionStorage.getItem("userId"), budget)
         .then((response) => {
             setBudget(response.data);
         })
@@ -18,7 +18,7 @@ const UserReport = () => {
     }, [])
 
     useEffect(() => {
-        axios.get("http://localhost:9007/expenses/2")
+        axios.get("http://localhost:9007/expenses/" + sessionStorage.getItem("userId"), expense)
         .then((response) =>{
             setExpense(response.data);
         })
