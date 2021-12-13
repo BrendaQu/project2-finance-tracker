@@ -16,7 +16,7 @@ const UserBudgetForm = () => {
 
     //Need to update user_id, right now it's hard coded
     function onSubmitHandler(e) {
-        axios.get('http://localhost:9007/budgets/2', budget)
+        axios.get('http://localhost:9007/budgets/' + sessionStorage.getItem("userId"), budget)
         .then(response => {
             if(!response.data || response.data.length == 0){
                 axios.post('http://localhost:9007/budgets/2', budget)
@@ -30,7 +30,7 @@ const UserBudgetForm = () => {
                     })
                     .catch(error => console.error(error))
             } else {
-                axios.put('http://localhost:9007/budgets/2', budget)
+                axios.put('http://localhost:9007/budgets/' + sessionStorage.getItem("userId"), budget)
                 .then(response => {
                     window.location.pathname = ('/userbudget')
                     setBudget(response.data)

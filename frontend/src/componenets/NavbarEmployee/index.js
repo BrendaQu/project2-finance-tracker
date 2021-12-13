@@ -2,7 +2,10 @@
 import React from "react";
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 
+
 const NavbarEmployee = () => {
+
+    const name = sessionStorage.getItem("name")
     return (
             <Navbar expand="lg" variant="light">
                 <Container>
@@ -18,7 +21,7 @@ const NavbarEmployee = () => {
                             <NavDropdown title={
                                 <div className="profile-header">
                                     <img src={process.env.PUBLIC_URL + '/img/profile.jpg'} width="20" height="20" alt="profile" />
-                                    <p>Name</p>
+                                    <p>{name}</p>
                                 </div>} id="navbarScrollingDropdown">
                                 <NavDropdown.Item href="/">Logout</NavDropdown.Item>
                             </NavDropdown>
