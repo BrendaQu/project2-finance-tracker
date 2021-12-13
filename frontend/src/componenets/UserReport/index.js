@@ -1,8 +1,30 @@
 //Brenda
-import React from "react";
+import React, {useState, useEffect} from "react";
 import axios from "axios";
+import BudgetBars from "./BudgetBars";
+import ExpenseLogs from "./ExpenseLogs";
 
 const UserReport = () => {
+
+    const[budget, setBudget] = useState([]);
+    const[expense, setExpense] = useState([]);
+
+    useEffect(() => {
+        axios.get("http://localhost:9007/budgets/2")
+        .then((response) => {
+            setBudget(response.data);
+        })
+        .catch((error) => console.error(error));
+    }, [])
+
+    useEffect(() => {
+        axios.get("http://localhost:9007/expenses/2")
+        .then((response) =>{
+            setExpense(response.data);
+        })
+        .catch((error) => console.error(error));
+    }, [])
+
     return (
         <div className="container">
             <h3>Report</h3>
@@ -19,16 +41,10 @@ const UserReport = () => {
             </ul>
             <br />
             <p>Budget Percentage</p>
-            <div class="progress">
-                <div class="progress-bar bar-rent" role="progressbar" style={{ width: '45%' }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$1,200</div>
-                <div class="progress-bar bar-utl" role="progressbar" style={{ width: '11%' }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$300</div>
-                <div class="progress-bar bar-groc" role="progressbar" style={{ width: '15%' }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$400</div>
-                <div class="progress-bar bar-subs" role="progressbar" style={{ width: '4%' }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$100</div>
-                <div class="progress-bar bar-ent" role="progressbar" style={{ width: '8%' }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$200</div>
-                <div class="progress-bar bar-din" role="progressbar" style={{ width: '8%' }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$200</div>
-                <div class="progress-bar bar-shop" role="progressbar" style={{ width: '6%' }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$150</div>
-                <div class="progress-bar bar-misc" role="progressbar" style={{ width: '3%' }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$100</div>
-            </div>
+            {
+                <BudgetBars data={budget}/>
+            }
+
             <br />
             <p>This Month's Actual Percentage</p>
             <div class="progress">
@@ -105,54 +121,9 @@ const UserReport = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>12/01/2021</td>
-                        <td>$1,200</td>
-                        <td>Rent</td>
-                        <td>Rent sent to landlord</td>
-                    </tr>
-                    <tr>
-                        <td>12/02/2021</td>
-                        <td>$300</td>
-                        <td>Utilities</td>
-                        <td>Utitlies sent</td>
-                    </tr>
-                    <tr>
-                        <td>12/05/21</td>
-                        <td>Groceries</td>
-                        <td>$125</td>
-                        <td>Kroger</td>
-                    </tr>
-                    <tr>
-                        <td>12/03/2021</td>
-                        <td>Subscription</td>
-                        <td>$10</td>
-                        <td>Netflix</td>
-                    </tr>
-                    <tr>
-                        <td>12/04/2021</td>
-                        <td>Entertainment</td>
-                        <td>$80</td>
-                        <td>Concert</td>
-                    </tr>
-                    <tr>
-                        <td>12/07/2021</td>
-                        <td>Dining Out</td>
-                        <td>$50</td>
-                        <td>Chili's</td>
-                    </tr>
-                    <tr>
-                        <td>12/05/2021</td>
-                        <td>Shopping</td>
-                        <td>$90</td>
-                        <td>Clothing Store</td>
-                    </tr>
-                    <tr>
-                        <td>12/06/2021</td>
-                        <td>Misc</td>
-                        <td>$25</td>
-                        <td>Gift card</td>
-                    </tr>
+                    {
+                        expense.map(e => <ExpenseLogs data={e}/>)
+                    }
                 </tbody>
             </table>
 
