@@ -8,6 +8,18 @@ const UserReport = () => {
 
     const[budget, setBudget] = useState([]);
     const[expense, setExpense] = useState([]);
+    const[expenseInfo, setExpenseInfo] = useState([]);
+
+    const expenseSums = {
+        rent: 0,
+        utilities: 0,
+        groceries: 0,
+        subscriptions: 0,
+        entertainment: 0,
+        dining: 0,
+        shopping: 0,
+        misc: 0
+    }
 
     useEffect(() => {
         axios.get("http://localhost:9007/budgets/" + sessionStorage.getItem("userId"), budget)
@@ -20,7 +32,40 @@ const UserReport = () => {
     useEffect(() => {
         axios.get("http://localhost:9007/expenses/" + sessionStorage.getItem("userId"), expense)
         .then((response) =>{
-            setExpense(response.data);
+            let obj = response.data
+                for (let i = 0; i < obj.length; i++) {
+
+                    switch(obj[i].category) {
+                        case "Rent":
+                            expenseSums.rent += obj[i].amount
+                            break;
+                        case "Utilities":
+                            expenseSums.utilities += obj[i].amount
+                            break;
+                        case "Groceries":
+                            expenseSums.groceries += obj[i].amount
+                            break;
+                        case "Subscription":
+                            expenseSums.subscriptions += obj[i].amount
+                            break;
+                        case "Entertainment":
+                            expenseSums.entertainment += obj[i].amount
+                            break;
+                        case "Dining Out":
+                            expenseSums.dining += obj[i].amount
+                            break;
+                        case "Shopping":
+                            expenseSums.shopping += obj[i].amount
+                            break;
+                        case "Misc.":
+                            expenseSums.misc += obj[i].amount
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            setExpense(expenseSums);
+            setExpenseInfo(response.data)
         })
         .catch((error) => console.error(error));
     }, [])
@@ -48,14 +93,9 @@ const UserReport = () => {
             <br />
             <p>This Month's Actual Percentage</p>
             <div class="progress">
-                <div class="progress-bar bar-rent" role="progressbar" style={{ width: '39%' }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$1,200</div>
-                <div class="progress-bar bar-utl" role="progressbar" style={{ width: '10%' }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$300</div>
-                <div class="progress-bar bar-groc" role="progressbar" style={{ width: '11%' }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$350</div>
-                <div class="progress-bar bar-subs" role="progressbar" style={{ width: '3%' }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$100</div>
-                <div class="progress-bar bar-ent" role="progressbar" style={{ width: '11%' }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$357</div>
-                <div class="progress-bar bar-din" role="progressbar" style={{ width: '11%' }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$332</div>
-                <div class="progress-bar bar-shop" role="progressbar" style={{ width: '8%' }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$234</div>
-                <div class="progress-bar bar-misc" role="progressbar" style={{ width: '7%' }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$232</div>
+            {
+                <BudgetBars data={expense}/>
+            }
             </div>
             <br />
             <h4>Budget vs Actual Spending</h4>
@@ -70,43 +110,43 @@ const UserReport = () => {
                 <tbody>
                     <tr>
                         <th scope="row">Rent</th>
-                        <td>$1,200</td>
-                        <td>$1,200</td>
+                        <td>${budget.rent}</td>
+                        <td>${Object.values(expense)[0]}</td>
                     </tr>
                     <tr>
                         <th scope="row">Utilities</th>
-                        <td>$300</td>
-                        <td>$300</td>
+                        <td>${budget.utilities}</td>
+                        <td>${Object.values(expense)[1]}</td>
                     </tr>
                     <tr>
                         <th scope="row">Groceries</th>
-                        <td>$400</td>
-                        <td>$350</td>
+                        <td>${budget.groceries}</td>
+                        <td>${Object.values(expense)[2]}</td>
                     </tr>
                     <tr>
                         <th scope="row">Subscription</th>
-                        <td>$100</td>
-                        <td>$100</td>
+                        <td>${budget.subscriptions}</td>
+                        <td>${Object.values(expense)[3]}</td>
                     </tr>
                     <tr>
                         <th scope="row">Entertainment</th>
-                        <td>$200</td>
-                        <td>$357</td>
+                        <td>${budget.entertainment}</td>
+                        <td>${Object.values(expense)[4]}</td>
                     </tr>
                     <tr>
                         <th scope="row">Dining Out</th>
-                        <td>$200</td>
-                        <td>$332</td>
+                        <td>${budget.dining}</td>
+                        <td>${Object.values(expense)[5]}</td>
                     </tr>
                     <tr>
                         <th scope="row">Shopping</th>
-                        <td>$150</td>
-                        <td>$234</td>
+                        <td>${budget.shopping}</td>
+                        <td>${Object.values(expense)[6]}</td>
                     </tr>
                     <tr>
                         <th scope="row">Misc</th>
-                        <td>$100</td>
-                        <td>$232</td>
+                        <td>${budget.misc}</td>
+                        <td>${Object.values(expense)[7]}</td>
                     </tr>
                 </tbody>
             </table>
@@ -122,7 +162,7 @@ const UserReport = () => {
                 </thead>
                 <tbody>
                     {
-                        expense.map(e => <ExpenseLogs data={e}/>)
+                        expenseInfo.map(e => <ExpenseLogs data={e}/>)
                     }
                 </tbody>
             </table>

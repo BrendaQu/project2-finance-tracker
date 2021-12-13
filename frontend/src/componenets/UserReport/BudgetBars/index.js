@@ -27,7 +27,7 @@ const BudgetBars = (props) => {
 
 
     return (
-        <div className="progress">
+        <div className="progress">{console.log(props.data)}
                 <div class="progress-bar bar-rent" role="progressbar" style={{ width: p_rent }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {props.data.rent}</div>
                 <div class="progress-bar bar-utl" role="progressbar" style={{ width: p_utl }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {props.data.utilities}</div>
                 <div class="progress-bar bar-groc" role="progressbar" style={{ width: p_groc }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {props.data.groceries}</div>
