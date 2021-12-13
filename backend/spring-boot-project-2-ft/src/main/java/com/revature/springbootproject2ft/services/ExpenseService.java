@@ -12,4 +12,5 @@ public interface ExpenseService {
     public List<Expense> getExpenseByUserId(long user_id);
     public void deleteExpense(long id);
     public Expense updateExpense(long id, Expense updateExpense);
+//    public List<Expense> sumTotalExpenseCategoryByUserId(long id);
 }

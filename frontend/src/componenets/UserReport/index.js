@@ -3,6 +3,7 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import BudgetBars from "./BudgetBars";
 import ExpenseLogs from "./ExpenseLogs";
+import ExpenseBars from "./ExpenseBars";
 
 const UserReport = () => {
 
@@ -47,7 +48,7 @@ const UserReport = () => {
 
             <br />
             <p>This Month's Actual Percentage</p>
-            <div class="progress">
+            {/* <div class="progress">
                 <div class="progress-bar bar-rent" role="progressbar" style={{ width: '39%' }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$1,200</div>
                 <div class="progress-bar bar-utl" role="progressbar" style={{ width: '10%' }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$300</div>
                 <div class="progress-bar bar-groc" role="progressbar" style={{ width: '11%' }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$350</div>
@@ -56,7 +57,10 @@ const UserReport = () => {
                 <div class="progress-bar bar-din" role="progressbar" style={{ width: '11%' }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$332</div>
                 <div class="progress-bar bar-shop" role="progressbar" style={{ width: '8%' }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$234</div>
                 <div class="progress-bar bar-misc" role="progressbar" style={{ width: '7%' }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$232</div>
-            </div>
+            </div> */}
+            {
+                <ExpenseBars data={expense}/>
+            }
             <br />
             <h4>Budget vs Actual Spending</h4>
             <table class="table table-hover table-bordered table-striped" >

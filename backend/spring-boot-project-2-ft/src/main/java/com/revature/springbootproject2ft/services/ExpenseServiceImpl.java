@@ -51,4 +51,12 @@ public class ExpenseServiceImpl implements ExpenseService{
         expenseDB.setMemo(updateExpense.getMemo());
         return repository.save(expenseDB);
     }
+
+//    @Override
+//    public List<Expense> sumTotalExpenseCategoryByUserId(long id) {
+//
+//        return null;
+//    }
+
+
 }
