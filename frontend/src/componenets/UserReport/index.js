@@ -3,12 +3,12 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import BudgetBars from "./BudgetBars";
 import ExpenseLogs from "./ExpenseLogs";
+import ExpenseBarsAndTable from "./ExpenseBarsAndTable";
 
 const UserReport = () => {
 
     const[budget, setBudget] = useState([]);
     const[expense, setExpense] = useState([]);
-    const[expenseInfo, setExpenseInfo] = useState([]);
 
     const expenseSums = {
         rent: 0,
@@ -32,40 +32,7 @@ const UserReport = () => {
     useEffect(() => {
         axios.get("http://localhost:9007/expenses/" + sessionStorage.getItem("userId"), expense)
         .then((response) =>{
-            let obj = response.data
-                for (let i = 0; i < obj.length; i++) {
-
-                    switch(obj[i].category) {
-                        case "Rent":
-                            expenseSums.rent += obj[i].amount
-                            break;
-                        case "Utilities":
-                            expenseSums.utilities += obj[i].amount
-                            break;
-                        case "Groceries":
-                            expenseSums.groceries += obj[i].amount
-                            break;
-                        case "Subscription":
-                            expenseSums.subscriptions += obj[i].amount
-                            break;
-                        case "Entertainment":
-                            expenseSums.entertainment += obj[i].amount
-                            break;
-                        case "Dining Out":
-                            expenseSums.dining += obj[i].amount
-                            break;
-                        case "Shopping":
-                            expenseSums.shopping += obj[i].amount
-                            break;
-                        case "Misc.":
-                            expenseSums.misc += obj[i].amount
-                            break;
-                        default:
-                            break;
-                    }
-                }
-            setExpense(expenseSums);
-            setExpenseInfo(response.data)
+            setExpense(response.data);
         })
         .catch((error) => console.error(error));
     }, [])
@@ -85,18 +52,20 @@ const UserReport = () => {
                 <li><span class="legend-misc"></span>Misc</li>
             </ul>
             <br />
-            <p>Budget Percentage</p>
+            <p>Budget Percentage Bar</p>
             {
                 <BudgetBars data={budget}/>
             }
 
             <br />
-            <p>This Month's Actual Percentage</p>
-            <div class="progress">
             {
-                <BudgetBars data={expense}/>
+                <ExpenseBarsAndTable data={budget} />
             }
-            </div>
+            {/* <div>
+            <p>This Month's Actual Percentage Bar</p>
+            {
+                <ExpenseBars/>
+            }
             <br />
             <h4>Budget vs Actual Spending</h4>
             <table class="table table-hover table-bordered table-striped" >
@@ -106,8 +75,8 @@ const UserReport = () => {
                         <th scope="col">Budget</th>
                         <th scope="col">Actual</th>
                     </tr>
-                </thead>
-                <tbody>
+                </thead> */}
+                {/* <tbody>
                     <tr>
                         <th scope="row">Rent</th>
                         <td>${budget.rent}</td>
@@ -148,8 +117,14 @@ const UserReport = () => {
                         <td>${budget.misc}</td>
                         <td>${Object.values(expense)[7]}</td>
                     </tr>
-                </tbody>
-            </table>
+                </tbody> */}
+                {/* <tbody>
+                    {
+                        <BudvsAct data={budget}/>
+                    }
+                </tbody> */}
+            {/* </table>
+            </div> */}
             <h4>Expense Logs</h4>
             <table class="table table-hover table-bordered table-striped" >
                 <thead>
@@ -162,7 +137,7 @@ const UserReport = () => {
                 </thead>
                 <tbody>
                     {
-                        expenseInfo.map(e => <ExpenseLogs data={e}/>)
+                        expense.map(e => <ExpenseLogs data={e}/>)
                     }
                 </tbody>
             </table>
