@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const ExpenseBarsAndTable = (props) => {
+const ProgressBarsAndTable = (props) => {
     const [expenses, setExpenses] = useState([]);
 
     const expenseSums = {
@@ -206,4 +206,4 @@ const ExpenseBarsAndTable = (props) => {
     )
 }
 
-export default ExpenseBarsAndTable;
+export default ProgressBarsAndTable;

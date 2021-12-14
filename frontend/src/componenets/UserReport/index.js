@@ -2,7 +2,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import ExpenseLogs from "./ExpenseLogs";
-import ExpenseBarsAndTable from "./ProgressBarsAndTable";
+import ProgressBarsAndTable from "./ProgressBarsAndTable";
 
 const UserReport = () => {
 
@@ -54,7 +54,7 @@ const UserReport = () => {
             <br />
             <br />
             {
-                <ExpenseBarsAndTable data={budget} />
+                <ProgressBarsAndTable data={budget} />
             }
             <h4>Expense Logs</h4>
             <table class="table table-hover table-bordered table-striped" >
