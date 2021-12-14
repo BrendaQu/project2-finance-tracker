@@ -53,8 +53,7 @@ public class ExpenseServiceImpl implements ExpenseService{
     }
 
 //    @Override
-//    public List<Expense> sumTotalExpenseCategoryByUserId(long id) {
-//
+//    public Budget sumTotalExpenseCategoryByUserId(long id) {
 //        return null;
 //    }
 
