@@ -12,7 +12,7 @@ const Landing = () => {
                     <h1>Finance Manager</h1>
                     <p>Welcome to the greatest financing app in all of time and creation</p>
                     <br />
-                    <p>If you are new here, you can register for an accoutn up top.  Otherwise you can  just log in.</p>
+                    <p>If you are new here, you can register for an account up top.  Otherwise you can  just log in.</p>
                     </div>
                 </div>
             </div>
