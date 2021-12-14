@@ -22,68 +22,7 @@ Chart.overrides.doughnut = {
 
 const EmployeeReport = () => {
 
-    const onClickBar = () => {
-        var x = document.getElementsByClassName("bar-graph")[0];
-        console.log(x)
-        if (x.style.display === 'none') {
-            x.style.display = 'block';
-          } else {
-            x.style.display = 'none';
-          }
-    }
-
-    const onClickDoughnut = () => {
-        var x = document.getElementsByClassName("doughnut-graph")[0];
-        console.log(x)
-        if (x.style.display === 'none') {
-            x.style.display = 'block';
-          } else {
-            x.style.display = 'none';
-          }
-    }
-
-    useEffect(() => {
-        axios
-            .get("http://localhost:9007/expenses")
-            .then((response) => {
-                console.log(response.data)
-                let obj = response.data
-                for (let i = 0; i < obj.length; i++) {
-                    switch(obj[i].category) {
-                        case "Rent":
-                            catSums.Rent += obj[i].amount
-                            break;
-                        case "Utilities":
-                            catSums.Utilities += obj[i].amount
-                            break;
-                        case "Groceries":
-                            catSums.Groceries += obj[i].amount
-                            break;
-                        case "Subscription":
-                            catSums.Subscriptions += obj[i].amount
-                            break;
-                        case "Entertainment":
-                            catSums.Entertainment += obj[i].amount
-                            break;
-                        case "Dining Out":
-                            catSums.Dining += obj[i].amount
-                            break;
-                        case "Shopping":
-                            catSums.Shopping += obj[i].amount
-                            break;
-                        case "Misc.":
-                            catSums.Misc += obj[i].amount
-                            break;
-                        default:
-                            break;
-                    }
-                }
-                setCategory(catSums);
-                console.log(category)
-                console.log(Object.values(category))
-            })
-            .catch((error) => console.error(error));
-    }, [])
+    var count = 0
 
     const catSums = {
         Rent: 0,
@@ -133,15 +72,96 @@ const EmployeeReport = () => {
 
     }
 
+    const onClickBar = () => {
+        var x = document.getElementsByClassName("bar-graph")[0];
+        var y = document.getElementsByClassName("doughnut-graph")[0];
+        console.log(x)
+        if (x.style.display === 'none') {
+            y.style.display = 'none';
+            x.style.display = 'block';
+        } else {
+            x.style.display = 'none';
+            y.style.display = 'block';
+        }
+    }
+
+    const onClickDoughnut = () => {
+        var x = document.getElementsByClassName("doughnut-graph")[0];
+        var y = document.getElementsByClassName("bar-graph")[0];
+        console.log(x)
+        if (x.style.display === 'none') {
+            y.style.display = 'none';
+            x.style.display = 'block';
+        } else {
+            x.style.display = 'none';
+            y.style.display = 'block';
+        }
+    }
+
+    useEffect(() => {
+        var x = document.getElementsByClassName("doughnut-graph")[0];
+        x.style.display = 'none';
+        axios
+            .get("http://localhost:9007/users")
+            .then((response) => {
+                for (let i = 0; i < response.data.length; i++) {
+                    if (response.data[i].type === "regular") {
+                        count++
+                    }
+                }
+            })
+            .catch((error) => console.error(error))
+        axios
+            .get("http://localhost:9007/expenses")
+            .then((response) => {
+                let obj = response.data
+                console.log(count)
+                for (let i = 0; i < obj.length; i++) {
+                    switch (obj[i].category) {
+                        case "Rent":
+                            catSums.Rent += Math.round(obj[i].amount / count * 100) / 100
+                            break;
+                        case "Utilities":
+                            catSums.Utilities += Math.round(obj[i].amount / count * 100) / 100
+                            break;
+                        case "Groceries":
+                            catSums.Groceries += Math.round(obj[i].amount / count * 100) / 100
+                            break;
+                        case "Subscription":
+                            catSums.Subscriptions += Math.round(obj[i].amount / count * 100) / 100
+                            break;
+                        case "Entertainment":
+                            catSums.Entertainment += Math.round(obj[i].amount / count * 100) / 100
+                            break;
+                        case "Dining Out":
+                            catSums.Dining += Math.round(obj[i].amount / count * 100) / 100
+                            break;
+                        case "Shopping":
+                            catSums.Shopping += Math.round(obj[i].amount / count * 100) / 100
+                            break;
+                        case "Misc.":
+                            catSums.Misc += Math.round(obj[i].amount / count * 100) / 100
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                setCategory(catSums);
+            })
+            .catch((error) => console.error(error));
+    }, [])
+
+
+
 
     return (
         <div className="graphs container">
-            <button type="button" className="btn btn-primary m-3" onClick={onClickBar}>Bar</button>
-            <button type="button" className="btn btn-primary m-3" onClick={onClickDoughnut}>Doughnut</button>
             <div className="bar-graph">
+            <button type="button" className="btn btn-primary m-3" onClick={onClickDoughnut}>Doughnut</button>
                 <Bar data={chartData} options={options} />
             </div>
             <div className="doughnut-graph">
+            <button type="button" className="btn btn-primary m-3" onClick={onClickBar}>Bar</button>
                 <Doughnut data={chartData} options={options} />
             </div>
         </div>

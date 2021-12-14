@@ -43,11 +43,7 @@ const UserReport = () => {
             <br />
             <br />
             {
-<<<<<<< HEAD
-                <ExpenseBarsAndTable data={budget} />
-=======
                 <ProgressBarsAndTable data={budget} />
->>>>>>> 69c380e3e44e5bffb1e359aca144a93d41c68a7e
             }
             <h4>Expense Logs</h4>
             <table class="table table-hover table-bordered table-striped" >
