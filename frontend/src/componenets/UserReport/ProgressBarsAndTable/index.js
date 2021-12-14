@@ -1,71 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const ExpenseBarsAndTable = (props) => {
-
-    //get current date
-    var nowDate = new Date();
-    var date = nowDate.getFullYear() + '-' + (nowDate.getMonth() + 1) + '-' + nowDate.getDate();
-
-    //initalize state
-    const [expenses, setExpenses] = useState([
-        // {
-        //     "expenseID": 1,
-        //     "date": date,
-        //     "amount": 100.56,
-        //     "category": "Shopping",
-        //     "memo": "Sephora"
-        // },
-        // {
-        //     "expenseID": 3,
-        //     "date": date,
-        //     "amount": 1450,
-        //     "category": "Rent",
-        //     "memo": "Rent"
-        // },
-        // {
-        //     "expenseID": 4,
-        //     "date": date,
-        //     "amount": 250,
-        //     "category": "Utilities",
-        //     "memo": "Utilities"
-        // },
-        // {
-        //     "expenseID": 6,
-        //     "date": date,
-        //     "amount": 55.67,
-        //     "category": "Dining Out",
-        //     "memo": "AppleBee's"
-        // },
-        // {
-        //     "expenseID": 7,
-        //     "date": date,
-        //     "amount": 125.34,
-        //     "category": "Groceries",
-        //     "memo": "Kroger"
-        // },
-        // {
-        //     "expenseID": 8,
-        //     "date": date,
-        //     "amount": 10.99,
-        //     "category": "Subscription",
-        //     "memo": "Netflix"
-        // },
-        // {
-        //     "expenseID": 10,
-        //     "date": date,
-        //     "amount": 10.56,
-        //     "category": "Misc.",
-        //     "memo": "Random"
-        // },
-        // {
-        //     "expenseID": 16,
-        //     "date": date,
-        //     "amount": 33.9,
-        //     "category": "Entertainment",
-        //     "memo": "Movies"
-        // }
-    ]);
+const ProgressBarsAndTable = (props) => {
+    const [expenses, setExpenses] = useState([]);
 
     const expenseSums = {
         rent: 0,
@@ -78,6 +15,28 @@ const ExpenseBarsAndTable = (props) => {
         misc: 0
     }
     const catPercent = {
+        rent: '0%',
+        utilities: '0%',
+        groceries: '0%',
+        subscriptions: '0%',
+        entertainment: '0%',
+        dining: '0%',
+        shopping: '0%',
+        misc: '0%'
+    }
+
+    const budget = {
+        rent: 0,
+        utilities: 0,
+        groceries: 0,
+        subscriptions: 0,
+        entertainment: 0,
+        dining: 0,
+        shopping: 0,
+        misc: 0
+    }
+
+    const budPercent = {
         rent: '0%',
         utilities: '0%',
         groceries: '0%',
@@ -110,47 +69,9 @@ const ExpenseBarsAndTable = (props) => {
 
     console.log(currMonthResult());
 
-    //group array object into different categories
-    // function groupBy(arr, key) {
-    //     return arr.reduce(function (cat, x) {
-    //         if (!cat[x[key]]) {
-    //             cat[x[key]] = [];
-    //         }
-    //         cat[x[key]].push(x);
-    //         return cat;
-    //     }, []);
-    // }
-
-    // const categories = groupBy(currMonthResult(), 'category');
-
-    // console.log(categories);
-
-    //sum each category
-    // function sumCat(arr, p) {
-    //     return arr.map(i => i[p]).reduce((a, b) => a + b);
-
-    // }
-
-
-    // const cat_arr = ['Rent', 'Utilities', 'Groceries', 'Subscription', 'Entertainment', 'Dining Out', 'Shopping', 'Misc.'];
-    // const cat_amount = [];
-
-
-    // for (let cat of cat_arr) {
-    //     cat_amount.push(sumCat(categories[cat], 'amount'));
-    // }
-
-    // console.log(cat_amount);
-
-    // let cat_total = 0;
-    // for (let item of cat_amount) {
-    //     cat_total += item;
-    // }
-    // console.log(cat_total);
-
     let cat_total = 0;
     for (let i = 0; i < currMonthResult().length; i++) {
-        cat_total = currMonthResult()[i].amount
+        cat_total += currMonthResult()[i].amount;
         switch (currMonthResult()[i].category) {
             case "Rent":
                 expenseSums.rent += currMonthResult()[i].amount;
@@ -182,17 +103,41 @@ const ExpenseBarsAndTable = (props) => {
 
     console.log(expenseSums);
 
-    for(const key in catPercent){
-        console.log(`${key}:
-         ${catPercent[key]=(expenseSums[key]/cat_total*100).toString() + '%'}`);
+    let bud_total = 0;
+    for (const key in budget) {
+        if (props.data[key] == undefined) {
+            budget[key] = 0;
+        } else {
+            budget[key] = props.data[key];
+            bud_total += props.data[key];
+        }
+    }
+
+    console.log(budget);
+
+    for (let key in catPercent) {
+        catPercent[key] = (expenseSums[key] / cat_total * 100).toString() + '%';
+        budPercent[key] = (budget[key] / bud_total * 100).toString() + '%';
     }
 
     console.log(catPercent);
-
+    console.log(budPercent);
 
     return (
 
         <div>
+            <p>Budget Percentage Bar</p>
+            <div className="progress">
+                <div class="progress-bar bar-rent" role="progressbar" style={{ width: budPercent.rent }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {budget.rent}</div>
+                <div class="progress-bar bar-utl" role="progressbar" style={{ width: budPercent.utilities  }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {budget.utilities}</div>
+                <div class="progress-bar bar-groc" role="progressbar" style={{ width: budPercent.groceries  }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {budget.groceries}</div>
+                <div class="progress-bar bar-subs" role="progressbar" style={{ width:  budPercent.subscriptions }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {budget.subscriptions}</div>
+                <div class="progress-bar bar-ent" role="progressbar" style={{ width: budPercent.entertainment  }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {budget.entertainment}</div>
+                <div class="progress-bar bar-din" role="progressbar" style={{ width: budPercent.dining  }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {budget.dining}</div>
+                <div class="progress-bar bar-shop" role="progressbar" style={{ width: budPercent.shopping  }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {budget.shopping}</div>
+                <div class="progress-bar bar-misc" role="progressbar" style={{ width: budPercent.misc  }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {budget.misc}</div>
+            </div>
+            <br />
             <p>This Month's Actual Percentage Bar</p>
             <div class="progress">
                 <div class="progress-bar bar-rent" role="progressbar" style={{ width: catPercent.rent }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {expenseSums.rent}</div>
@@ -217,42 +162,42 @@ const ExpenseBarsAndTable = (props) => {
                 <tbody>
                     <tr>
                         <th scope="row">Rent</th>
-                        <td>${props.data.rent}</td>
+                        <td>${budget.rent}</td>
                         <td>${expenseSums.rent}</td>
                     </tr>
                     <tr>
                         <th scope="row">Utilities</th>
-                        <td>${props.data.utilities}</td>
+                        <td>${budget.utilities}</td>
                         <td>${expenseSums.utilities}</td>
                     </tr>
                     <tr>
                         <th scope="row">Groceries</th>
-                        <td>${props.data.groceries}</td>
+                        <td>${budget.groceries}</td>
                         <td>${expenseSums.groceries}</td>
                     </tr>
                     <tr>
                         <th scope="row">Subscription</th>
-                        <td>${props.data.subscriptions}</td>
+                        <td>${budget.subscriptions}</td>
                         <td>${expenseSums.subscriptions}</td>
                     </tr>
                     <tr>
                         <th scope="row">Entertainment</th>
-                        <td>${props.data.entertainment}</td>
+                        <td>${budget.entertainment}</td>
                         <td>${expenseSums.entertainment}</td>
                     </tr>
                     <tr>
                         <th scope="row">Dining Out</th>
-                        <td>${props.data.dining}</td>
+                        <td>${budget.dining}</td>
                         <td>${expenseSums.dining}</td>
                     </tr>
                     <tr>
                         <th scope="row">Shopping</th>
-                        <td>${props.data.shopping}</td>
+                        <td>${budget.shopping}</td>
                         <td>${expenseSums.shopping}</td>
                     </tr>
                     <tr>
                         <th scope="row">Misc</th>
-                        <td>${props.data.misc}</td>
+                        <td>${budget.misc}</td>
                         <td>${expenseSums.misc}</td>
                     </tr>
                 </tbody>
@@ -261,4 +206,4 @@ const ExpenseBarsAndTable = (props) => {
     )
 }
 
-export default ExpenseBarsAndTable;
+export default ProgressBarsAndTable;

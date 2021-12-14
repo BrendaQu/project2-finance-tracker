@@ -1,9 +1,8 @@
 //Brenda
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-import BudgetBars from "./BudgetBars";
 import ExpenseLogs from "./ExpenseLogs";
-import ExpenseBarsAndTable from "./ExpenseBarsAndTable";
+import ProgressBarsAndTable from "./ProgressBarsAndTable";
 
 const UserReport = () => {
 
@@ -40,15 +39,15 @@ const UserReport = () => {
                 <li><span class="legend-shop"></span> Shopping</li>
                 <li><span class="legend-misc"></span>Misc</li>
             </ul>
-            <br />
-            <p>Budget Percentage Bar</p>
-            {
-                <BudgetBars data={budget}/>
-            }
 
             <br />
+            <br />
             {
+<<<<<<< HEAD
                 <ExpenseBarsAndTable data={budget} />
+=======
+                <ProgressBarsAndTable data={budget} />
+>>>>>>> 69c380e3e44e5bffb1e359aca144a93d41c68a7e
             }
             <h4>Expense Logs</h4>
             <table class="table table-hover table-bordered table-striped" >
