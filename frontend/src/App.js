@@ -1,6 +1,5 @@
 import './App.css';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import NavbarDefault from './componenets/NavbarDefault';
 import EmployeeApprovalPage from './pages/EmployeeApprovalPage';
 import EmployeeDeletePage from './pages/EmployeeDeletePage';
 import EmployeeMenuPage from './pages/EmployeeMenuPage';
@@ -16,30 +15,64 @@ import UserReportPage from './pages/UserReportPage';
 import Footer from './componenets/Footer';
 
 function App() {
-  return (
-    <div>
-    <Router>
-      <div>
-        <Routes>
-          <Route path='/' element={<LandingPage />} />
-          <Route path='/EmpApprove' element={<EmployeeApprovalPage />} />
-          <Route path='/EmpDelete' element={<EmployeeDeletePage />} />
-          <Route path='/EmpMenu' element={<EmployeeMenuPage />} />
-          <Route path='/EmpSearch' element={<EmployeeSearchPage />} />
-          <Route path='/EmpReport' element={<EmployeeReportPage />} />
-          <Route path='/userbudget' element={<UserBudgetPage />} />
-          <Route path='/userexpense' element={<UserExpensePage />} />
-          <Route path='/login' element={<LoginPage />} />
-          <Route path='/register' element={<RegisterPage />} />
-          <Route path='/usermenu' element={<UserMenuPage />} />
-          <Route path='/userreport' element={<UserReportPage />} />
-          
-        </Routes>
-      </div>
-    </Router>
-    <Footer />
-    </div>
-  );
+  switch(sessionStorage.getItem("type")) {
+    case "regular":
+      return (
+        <div>
+        <Router>
+          <div>
+            <Routes>
+              <Route path='/' element={<LandingPage />} />
+              <Route path='/userbudget' element={<UserBudgetPage />} />
+              <Route path='/userexpense' element={<UserExpensePage />} />
+              <Route path='/login' element={<LoginPage />} />
+              <Route path='/register' element={<RegisterPage />} />
+              <Route path='/usermenu' element={<UserMenuPage />} />
+              <Route path='/userreport' element={<UserReportPage />} />
+              
+            </Routes>
+          </div>
+        </Router>
+        <Footer />
+        </div>
+      );
+    case "employee":
+      return (
+        <div>
+        <Router>
+          <div>
+            <Routes>
+              <Route path='/' element={<LandingPage />} />
+              <Route path='/EmpApprove' element={<EmployeeApprovalPage />} />
+              <Route path='/EmpDelete' element={<EmployeeDeletePage />} />
+              <Route path='/EmpMenu' element={<EmployeeMenuPage />} />
+              <Route path='/EmpSearch' element={<EmployeeSearchPage />} />
+              <Route path='/EmpReport' element={<EmployeeReportPage />} />
+              <Route path='/login' element={<LoginPage />} />
+              <Route path='/register' element={<RegisterPage />} />
+            </Routes>
+          </div>
+        </Router>
+        <Footer />
+        </div>
+      );
+    default:
+      return (
+        <div>
+        <Router>
+          <div>
+            <Routes>
+              <Route path='/'  element={<LandingPage />} />
+              <Route path='/login' element={<LoginPage />} />
+              <Route path='/register' element={<RegisterPage />} />
+            </Routes>
+          </div>
+        </Router>
+        <Footer />
+        </div>
+      );
+  }
+
 }
 
 export default App;

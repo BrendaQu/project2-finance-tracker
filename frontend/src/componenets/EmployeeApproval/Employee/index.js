@@ -2,19 +2,16 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const Employee = (props) => {
-
-    const [user, setUser] = useState([])
-    
     const approveHandler = () => {
         axios.post("http://localhost:9007/users", props.data)
-        .then((response) => {setUser(response)})
+        .then()
         .catch((error) => console.error(error))
         denyHandler()
     }
 
     const denyHandler = () => {
         axios.delete("http://localhost:9007/pendingUsers/" + props.data.userId)
-        .then((response) => {window.location.pathname = ('/EmpApprove')})
+        .then(window.location.pathname = ('/EmpApprove'))
         .catch((error) => console.error(error))
 
     }
