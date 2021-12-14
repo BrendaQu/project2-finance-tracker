@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+//Diplays a row of a table with the information of the passed prop
 import axios from "axios";
 
 const Employee = (props) => {

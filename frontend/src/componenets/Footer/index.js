@@ -1,6 +1,5 @@
 //Brenda
 import React from "react";
-import reactDom from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faTwitter, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";

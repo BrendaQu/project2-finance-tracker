@@ -10,17 +10,6 @@ const UserReport = () => {
     const[budget, setBudget] = useState([]);
     const[expense, setExpense] = useState([]);
 
-    const expenseSums = {
-        rent: 0,
-        utilities: 0,
-        groceries: 0,
-        subscriptions: 0,
-        entertainment: 0,
-        dining: 0,
-        shopping: 0,
-        misc: 0
-    }
-
     useEffect(() => {
         axios.get("http://localhost:9007/budgets/" + sessionStorage.getItem("userId"), budget)
         .then((response) => {
@@ -61,70 +50,6 @@ const UserReport = () => {
             {
                 <ExpenseBarsAndTable data={budget} />
             }
-            {/* <div>
-            <p>This Month's Actual Percentage Bar</p>
-            {
-                <ExpenseBars/>
-            }
-            <br />
-            <h4>Budget vs Actual Spending</h4>
-            <table class="table table-hover table-bordered table-striped" >
-                <thead>
-                    <tr>
-                        <th scope="col">Category</th>
-                        <th scope="col">Budget</th>
-                        <th scope="col">Actual</th>
-                    </tr>
-                </thead> */}
-                {/* <tbody>
-                    <tr>
-                        <th scope="row">Rent</th>
-                        <td>${budget.rent}</td>
-                        <td>${Object.values(expense)[0]}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Utilities</th>
-                        <td>${budget.utilities}</td>
-                        <td>${Object.values(expense)[1]}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Groceries</th>
-                        <td>${budget.groceries}</td>
-                        <td>${Object.values(expense)[2]}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Subscription</th>
-                        <td>${budget.subscriptions}</td>
-                        <td>${Object.values(expense)[3]}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Entertainment</th>
-                        <td>${budget.entertainment}</td>
-                        <td>${Object.values(expense)[4]}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Dining Out</th>
-                        <td>${budget.dining}</td>
-                        <td>${Object.values(expense)[5]}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Shopping</th>
-                        <td>${budget.shopping}</td>
-                        <td>${Object.values(expense)[6]}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Misc</th>
-                        <td>${budget.misc}</td>
-                        <td>${Object.values(expense)[7]}</td>
-                    </tr>
-                </tbody> */}
-                {/* <tbody>
-                    {
-                        <BudvsAct data={budget}/>
-                    }
-                </tbody> */}
-            {/* </table>
-            </div> */}
             <h4>Expense Logs</h4>
             <table class="table table-hover table-bordered table-striped" >
                 <thead>

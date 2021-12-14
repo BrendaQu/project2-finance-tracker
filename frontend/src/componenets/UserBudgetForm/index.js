@@ -1,5 +1,5 @@
 //Brenda
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import axios from 'axios';
 
 const UserBudgetForm = () => {
@@ -17,7 +17,7 @@ const UserBudgetForm = () => {
     function onSubmitHandler(e) {
         axios.get('http://localhost:9007/budgets/' + sessionStorage.getItem("userId"), budget)
         .then(response => {
-            if(!response.data || response.data.length == 0){
+            if(!response.data || response.data.length === 0){
                 axios.post('http://localhost:9007/budgets/' + sessionStorage.getItem("userId"), budget)
                 .then(response => {
                     window.location.pathname = ('/userbudget')

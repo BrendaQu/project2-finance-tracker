@@ -1,4 +1,5 @@
 //Milton
+//Displays a table with all regular users in it with button that will remove them from the database
 import React, { useState, useEffect } from "react";
 import Employee from "./Employee";
 import axios from "axios";
