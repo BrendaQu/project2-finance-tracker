@@ -188,6 +188,7 @@ const ProgressBarsAndTable = (props) => {
     for (const key in expenseSums) {
         expenseSums[key] = expenseSums[key].toFixed(2);
         budget[key] = budget[key].toFixed(2);
+        expenseSumsPrev[key] = expenseSumsPrev[key].toFixed(2);
     }
 
     console.log(budget);
