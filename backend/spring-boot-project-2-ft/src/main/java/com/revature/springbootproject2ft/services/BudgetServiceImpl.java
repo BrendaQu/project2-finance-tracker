@@ -57,7 +57,7 @@ public class BudgetServiceImpl implements BudgetService{
         budgetDB.setSubscriptions(updateBudget.getSubscriptions());
         budgetDB.setEntertainment(updateBudget.getEntertainment());
         budgetDB.setDining(updateBudget.getDining());
-        budgetDB.setDining(updateBudget.getShopping());
+        budgetDB.setShopping(updateBudget.getShopping());
         budgetDB.setMisc(updateBudget.getMisc());
 
         return repository.save(budgetDB);
