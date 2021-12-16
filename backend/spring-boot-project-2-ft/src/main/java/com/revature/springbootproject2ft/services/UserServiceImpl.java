@@ -47,4 +47,9 @@ public class UserServiceImpl implements UserService {
         userDB.setCountry(updateUser.getCountry());
         return repository.save(userDB);
     }
+
+    @Override
+    public int getCountByType(String type) {
+        return repository.getCountByType(type);
+    }
 }
