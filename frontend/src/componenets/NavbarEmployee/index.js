@@ -16,7 +16,7 @@ const NavbarEmployee = () => {
                             <Nav.Link href="/EmpMenu">Home</Nav.Link>
                             <Nav.Link href="/EmpApprove">Account Approval</Nav.Link>
                             <Nav.Link href="/EmpDelete">Deletion Request</Nav.Link>
-                            <Nav.Link href="/EmpSearch">Employee Search</Nav.Link>
+                            <Nav.Link href="/EmpSearch">User Search</Nav.Link>
                             <Nav.Link href="/EmpReport">Reports</Nav.Link>
                             <NavDropdown title={
                                 <div className="profile-header">

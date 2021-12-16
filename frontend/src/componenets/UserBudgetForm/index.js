@@ -1,4 +1,5 @@
 //Brenda
+//
 import React, {useState, useEffect} from "react";
 import axios from 'axios';
 
@@ -14,16 +15,16 @@ const UserBudgetForm = () => {
         misc: '100'
     })
 
-    //Need to update user_id, right now it's hard coded
     function onSubmitHandler(e) {
+        e.preventDefault()
         axios.get('http://localhost:9007/budgets/' + sessionStorage.getItem("userId"), budget)
         .then(response => {
-            if(!response.data || response.data.length == 0){
+            if(!response.data || response.data.length === 0){
                 axios.post('http://localhost:9007/budgets/' + sessionStorage.getItem("userId"), budget)
                 .then(response => {
-                    window.location.pathname = ('/userbudget')
                     setBudget(response.data)
                     console.log(response.data)
+                    window.location.pathname = ('/userbudget')
                 },
                     error => {
                         console.log(error)
@@ -32,9 +33,9 @@ const UserBudgetForm = () => {
             } else {
                 axios.put('http://localhost:9007/budgets/' + sessionStorage.getItem("userId"), budget)
                 .then(response => {
-                    window.location.pathname = ('/userbudget')
                     setBudget(response.data)
                     console.log(response.data)
+                    window.location.pathname = ('/userbudget')
                 },
                     error => {
                         console.log(error)
@@ -50,6 +51,14 @@ const UserBudgetForm = () => {
             [event.target.name]: event.target.value
         });
     }
+
+    useEffect(() => {
+        axios.get("http://localhost:9007/budgets/" + sessionStorage.getItem("userId"), budget)
+        .then((response) => {
+            setBudget(response.data);
+        })
+        .catch((error) => console.error(error));
+    }, [])
 
     return (
         <div className="container">

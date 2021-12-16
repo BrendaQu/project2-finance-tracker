@@ -1,6 +1,6 @@
 //Milton
 import React from "react";
-import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Container, Nav } from 'react-bootstrap';
 
 const NavbarDefault = () => {
   return (

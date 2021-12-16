@@ -12,7 +12,7 @@ const EmployeeMenu = () => {
                 <button class="btn btn-outline-secondary"><Nav.Link class="btn btn-outline-secondary" href="EmpApprove">Approval</Nav.Link></button>
                 <button class="btn btn-outline-secondary"><Nav.Link href="EmpDelete">Deletion</Nav.Link></button>
                 <button class="btn btn-outline-secondary"><Nav.Link href="EmpReport">View Reports</Nav.Link></button>
-                <button class="btn btn-outline-secondary"><Nav.Link href="EmpSearch">Search</Nav.Link></button>
+                <button class="btn btn-outline-secondary"><Nav.Link href="EmpSearch">User Search</Nav.Link></button>
             </div>
         </div>
     )

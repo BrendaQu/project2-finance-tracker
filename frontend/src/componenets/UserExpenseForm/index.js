@@ -1,8 +1,7 @@
 //Brenda
-import userEvent from "@testing-library/user-event";
 import axios from "axios";
 import React, {useState} from "react";
-import { useSelector } from 'react-redux';
+
 
 const UserExpenseForm = () => {
     const [expense, setExpense] = useState({
@@ -20,12 +19,13 @@ const UserExpenseForm = () => {
         })
     }
 
-    const onSubmitHandler = () =>{
+    const onSubmitHandler = (e) =>{
+        e.preventDefault()
         axios.post("http://localhost:9007/expenses/" + sessionStorage.getItem("userId"), expense)
         .then((response) => {
-            window.location.pathname = ('/userexpense')
             setExpense(response.data)
             console.log(response.data)
+            window.location.pathname = ('/userexpense')
         })
         .catch((error) => console.error(error))
     }

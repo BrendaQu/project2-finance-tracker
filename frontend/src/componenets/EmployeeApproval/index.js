@@ -1,4 +1,5 @@
 // Milton
+//Displays a table of pending users 
 import React, { useState, useEffect } from "react";
 import Employee from "./Employee";
 import axios from "axios";
@@ -34,7 +35,7 @@ const EmployeeApproval = () => {
                 {}
                 <tbody>
                     {
-                        
+                        //Generates a row of the table for each user
                         users.map(user => <Employee data={user} />)
                     }
                 </tbody>

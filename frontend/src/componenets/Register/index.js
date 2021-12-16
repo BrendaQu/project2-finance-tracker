@@ -14,18 +14,87 @@ const Register = () => {
         type: "regular"
     })
 
+    const [errorMessage, setErrorMessage] = useState({
+        firstNameError: '',
+        lastNameError: '',
+        emailError: '',
+        passwordError: '',
+        phoneError: '',
+        genderError: ''
+    })
+
+    function validate() {
+        let flag = true
+        let firstNameError= ''
+        let lastNameError= ''
+        let emailError= ''
+        let passwordError= ''
+        let phoneError= ''
+        let genderError= ''
+
+        if (user.firstName.length <= 0) {
+            
+            firstNameError= 'A first name is required'
+            flag = false;
+        } else {
+            firstNameError= ''
+        }
+
+        if (user.lastName.length <= 0) {
+            lastNameError= 'A last name is required'
+            flag = false;
+        } else {
+            lastNameError= ''
+        }
+
+        if (user.email.length <= 0) {
+            emailError= 'Email is required'
+            flag = false;
+        } else {
+            emailError= ''
+        }
+
+        if (user.password.length <= 0) {
+            passwordError= 'Password is required'
+            flag = false;
+        } else {
+            passwordError= ''
+        }
+
+        if (user.phone.length <= 0) {
+            phoneError= 'Phone is required'
+            flag = false;
+        } else {
+            phoneError= ''
+        }
+
+        if (user.gender.length <= 0) {
+            genderError= 'Gender is required'
+            flag = false;
+        } else {
+            genderError= ''
+        }
+        setErrorMessage({firstNameError, lastNameError, emailError, passwordError, phoneError, genderError})
+        return flag
+    }
+
     function onSubmitHandler(e) {
-        
-        axios.post('http://localhost:9007/pendingUsers', user)
-            .then(response => {
-                window.location.pathname = ('/register')
-                setUser(response.data)
-                console.log(response.data)
-            },
-                error => {
-                    console.log(error)
-                })
-            .catch(error => console.error(error))
+        e.preventDefault()
+        if (validate()) {
+            axios.post('http://localhost:9007/pendingUsers', user)
+                .then(response => {
+                    setUser(response.data)
+                    console.log(response.data)
+                },
+                    error => {
+                        console.log(error)
+                    })
+                .catch(error => console.error(error))
+                window.location.pathname = ("/")
+        } else {
+            console.log('error')
+        }
+
 
     }
 
@@ -46,35 +115,41 @@ const Register = () => {
                         <form method='post' onSubmit={onSubmitHandler}>
                             <div className="form-group row">
                                 <label className="col-sm-4" htmlFor="">First Name</label>
-                                <input type="text" className="form-control" name="firstName" value={user.firstName} onChange={onChangeHandler}/>
+                                <input type="text" className="form-control" name="firstName" value={user.firstName} onChange={onChangeHandler} />
                             </div>
+                            <small className="text-danger">{errorMessage.firstNameError}</small>
                             <div className="form-group row">
                                 <label className="col-sm-4" htmlFor="">Last Name</label>
-                                <input type="text" className="form-control" name="lastName" value={user.lastName} onChange={onChangeHandler}/>
+                                <input type="text" className="form-control" name="lastName" value={user.lastName} onChange={onChangeHandler} />
                             </div>
+                            <small className="text-danger">{errorMessage.lastNameError}</small>
                             <div className="form-group row">
                                 <label className="col-sm-4" htmlFor="">Email</label>
-                                <input type="text" className="form-control" name="email" value={user.email} onChange={onChangeHandler}/>
+                                <input type="text" className="form-control" name="email" value={user.email} onChange={onChangeHandler} />
                             </div>
+                            <small className="text-danger">{errorMessage.emailError}</small>
                             <div className="form-group row">
                                 <label className="col-sm-4" htmlFor="">Password</label>
                                 <input type="password" className="form-control" name="password" value={user.password} onChange={onChangeHandler} />
                             </div>
+                            <small className="text-danger">{errorMessage.passwordError}</small>
                             <div className="form-group row">
                                 <label className="col-sm-4" htmlFor="">Phone</label>
-                                <input type="text" className="form-control" name="phone" value={user.phone} onChange={onChangeHandler}/>
+                                <input type="text" className="form-control" name="phone" value={user.phone} onChange={onChangeHandler} />
                             </div>
+                            <small className="text-danger">{errorMessage.phoneError}</small>
                             <div className="form-group row">
                                 <label htmlFor="">Gender</label>
                                 <div className="form-check col-12">
-                                    <input className="form-check-input" type="radio" id="male" name="gender" value="Male" onChange={onChangeHandler}/>
+                                    <input className="form-check-input" type="radio" id="male" name="gender" value="Male" onChange={onChangeHandler} />
                                     <label className="form-check-label" for="male">Male </label>
                                 </div>
                                 <div className="form-check col-12">
-                                    <input className="form-check-input" type="radio" id="female" name="gender" value="Female" onChange={onChangeHandler}/>
+                                    <input className="form-check-input" type="radio" id="female" name="gender" value="Female" onChange={onChangeHandler} />
                                     <label className="form-check-label" for="female">Female </label>
                                 </div>
                             </div>
+                            <small className="text-danger">{errorMessage.genderError}</small>
                             <br />
                             <div className="form-group">
                                 <label htmlFor="">Country</label>
