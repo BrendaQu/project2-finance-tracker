@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class BudgetServiceImpl implements BudgetService{
@@ -57,7 +56,7 @@ public class BudgetServiceImpl implements BudgetService{
         budgetDB.setSubscriptions(updateBudget.getSubscriptions());
         budgetDB.setEntertainment(updateBudget.getEntertainment());
         budgetDB.setDining(updateBudget.getDining());
-        budgetDB.setDining(updateBudget.getShopping());
+        budgetDB.setShopping(updateBudget.getShopping());
         budgetDB.setMisc(updateBudget.getMisc());
 
         return repository.save(budgetDB);

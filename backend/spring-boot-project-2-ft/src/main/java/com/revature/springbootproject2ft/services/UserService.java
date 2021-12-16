@@ -10,4 +10,5 @@ public interface UserService {
     public User getUserById(long id);
     public void deleteUser(long id);
     public User updateUser(long id, User updateUser);
+    public int getCountByType(String type);
 }

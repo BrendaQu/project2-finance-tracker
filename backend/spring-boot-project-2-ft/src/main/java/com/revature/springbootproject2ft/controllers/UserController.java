@@ -39,5 +39,9 @@ public class UserController {
         return "record updated successfully";
     }
 
+    @GetMapping("users/type/{type}")
+    public int getCountByType(@PathVariable("type") String type){
+        return service.getCountByType(type);
+    }
 
 }
