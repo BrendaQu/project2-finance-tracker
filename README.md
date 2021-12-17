@@ -31,9 +31,3 @@ Allows users to enter expenses and see monthly totals on their expenditures.  Us
 
 
 
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-
