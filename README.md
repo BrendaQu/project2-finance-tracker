@@ -27,6 +27,8 @@ Allows users to enter expenses and see monthly totals on their expenditures.  Us
 
 ## How to Get Started
 
+## Usage
+
 ## Contributors
 - Brenda Quach
 - Milton Baidoum
