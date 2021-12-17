@@ -4,14 +4,16 @@
 Allows users to enter expenses and see monthly totals on their expenditures.  Users can also create a monthly budget and see how they are doing compared to that budget.  Employees can view all user accounts and approve account deletion.  Employees may also view compiled data on all users.
 
 ## Technologies Used
+- Bootstrap
 - Java
 - Javascript
-- ReactJS
 - HTML / CSS
-- Bootstrap
-- Spring Boot
-- Hibernate 
 - MySQL
+- ReactJS
+- Spring
+- Spring Boot
+- Spring MVC
+- Spring ORM
 
 ## Features Implemented
 - New Users can register for account
