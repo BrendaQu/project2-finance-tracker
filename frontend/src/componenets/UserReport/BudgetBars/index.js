@@ -27,14 +27,14 @@ const BudgetBars = (props) => {
 
     return (
         <div className="progress">
-                <div class="progress-bar bar-rent" role="progressbar" style={{ width: p_rent }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {props.data.rent}</div>
-                <div class="progress-bar bar-utl" role="progressbar" style={{ width: p_utl }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {props.data.utilities}</div>
-                <div class="progress-bar bar-groc" role="progressbar" style={{ width: p_groc }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {props.data.groceries}</div>
-                <div class="progress-bar bar-subs" role="progressbar" style={{ width: p_subs }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {props.data.subscriptions}</div>
-                <div class="progress-bar bar-ent" role="progressbar" style={{ width: p_ent }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {props.data.entertainment}</div>
-                <div class="progress-bar bar-din" role="progressbar" style={{ width: p_din }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {props.data.dining}</div>
-                <div class="progress-bar bar-shop" role="progressbar" style={{ width: p_shop }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {props.data.shopping}</div>
-                <div class="progress-bar bar-misc" role="progressbar" style={{ width: p_misc }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {props.data.misc}</div>
+                <div class="progress-bar bar-rent" role="progressbar" style={{ width: p_rent }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> {props.data.rent}</div>
+                <div class="progress-bar bar-utl" role="progressbar" style={{ width: p_utl }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> {props.data.utilities}</div>
+                <div class="progress-bar bar-groc" role="progressbar" style={{ width: p_groc }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> {props.data.groceries}</div>
+                <div class="progress-bar bar-subs" role="progressbar" style={{ width: p_subs }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> {props.data.subscriptions}</div>
+                <div class="progress-bar bar-ent" role="progressbar" style={{ width: p_ent }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> {props.data.entertainment}</div>
+                <div class="progress-bar bar-din" role="progressbar" style={{ width: p_din }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> {props.data.dining}</div>
+                <div class="progress-bar bar-shop" role="progressbar" style={{ width: p_shop }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> {props.data.shopping}</div>
+                <div class="progress-bar bar-misc" role="progressbar" style={{ width: p_misc }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> {props.data.misc}</div>
         </div>
     )
 }

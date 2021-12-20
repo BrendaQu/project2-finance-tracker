@@ -207,26 +207,26 @@ const ProgressBarsAndTable = (props) => {
         <div>
             <p>Budget Percentage Bar</p>
             <div className="progress">
-                <div class="progress-bar bar-rent" role="progressbar" style={{ width: budPercent.rent }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {budPercent.rent}</div>
-                <div class="progress-bar bar-utl" role="progressbar" style={{ width: budPercent.utilities }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {budPercent.utilities}</div>
-                <div class="progress-bar bar-groc" role="progressbar" style={{ width: budPercent.groceries }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {budPercent.groceries}</div>
-                <div class="progress-bar bar-subs" role="progressbar" style={{ width: budPercent.subscriptions }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {budPercent.subscriptions}</div>
-                <div class="progress-bar bar-ent" role="progressbar" style={{ width: budPercent.entertainment }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {budPercent.entertainment}</div>
-                <div class="progress-bar bar-din" role="progressbar" style={{ width: budPercent.dining }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {budPercent.dining}</div>
-                <div class="progress-bar bar-shop" role="progressbar" style={{ width: budPercent.shopping }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {budPercent.shopping}</div>
-                <div class="progress-bar bar-misc" role="progressbar" style={{ width: budPercent.misc }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {budPercent.misc}</div>
+                <div class="progress-bar bar-rent" role="progressbar" style={{ width: budPercent.rent }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> {budPercent.rent}</div>
+                <div class="progress-bar bar-utl" role="progressbar" style={{ width: budPercent.utilities }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> {budPercent.utilities}</div>
+                <div class="progress-bar bar-groc" role="progressbar" style={{ width: budPercent.groceries }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> {budPercent.groceries}</div>
+                <div class="progress-bar bar-subs" role="progressbar" style={{ width: budPercent.subscriptions }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> {budPercent.subscriptions}</div>
+                <div class="progress-bar bar-ent" role="progressbar" style={{ width: budPercent.entertainment }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> {budPercent.entertainment}</div>
+                <div class="progress-bar bar-din" role="progressbar" style={{ width: budPercent.dining }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> {budPercent.dining}</div>
+                <div class="progress-bar bar-shop" role="progressbar" style={{ width: budPercent.shopping }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> {budPercent.shopping}</div>
+                <div class="progress-bar bar-misc" role="progressbar" style={{ width: budPercent.misc }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> {budPercent.misc}</div>
             </div>
             <br />
             <p>This Month's Actual Percentage Bar</p>
             <div class="progress">
-                <div class="progress-bar bar-rent" role="progressbar" style={{ width: catPercent.rent }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {catPercent.rent}</div>
-                <div class="progress-bar bar-utl" role="progressbar" style={{ width: catPercent.utilities }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {catPercent.utilities}</div>
-                <div class="progress-bar bar-groc" role="progressbar" style={{ width: catPercent.groceries }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {catPercent.groceries}</div>
-                <div class="progress-bar bar-subs" role="progressbar" style={{ width: catPercent.subscriptions }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {catPercent.subscriptions}</div>
-                <div class="progress-bar bar-ent" role="progressbar" style={{ width: catPercent.entertainment }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {catPercent.entertainment}</div>
-                <div class="progress-bar bar-din" role="progressbar" style={{ width: catPercent.dining }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {catPercent.dining}</div>
-                <div class="progress-bar bar-shop" role="progressbar" style={{ width: catPercent.shopping }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {catPercent.shopping}</div>
-                <div class="progress-bar bar-misc" role="progressbar" style={{ width: catPercent.misc }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">$ {catPercent.misc}</div>
+                <div class="progress-bar bar-rent" role="progressbar" style={{ width: catPercent.rent }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> {catPercent.rent}</div>
+                <div class="progress-bar bar-utl" role="progressbar" style={{ width: catPercent.utilities }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> {catPercent.utilities}</div>
+                <div class="progress-bar bar-groc" role="progressbar" style={{ width: catPercent.groceries }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> {catPercent.groceries}</div>
+                <div class="progress-bar bar-subs" role="progressbar" style={{ width: catPercent.subscriptions }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> {catPercent.subscriptions}</div>
+                <div class="progress-bar bar-ent" role="progressbar" style={{ width: catPercent.entertainment }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> {catPercent.entertainment}</div>
+                <div class="progress-bar bar-din" role="progressbar" style={{ width: catPercent.dining }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> {catPercent.dining}</div>
+                <div class="progress-bar bar-shop" role="progressbar" style={{ width: catPercent.shopping }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> {catPercent.shopping}</div>
+                <div class="progress-bar bar-misc" role="progressbar" style={{ width: catPercent.misc }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> {catPercent.misc}</div>
             </div>
             <br />
             <h4>Budget vs Actual Spending</h4>
