@@ -4,9 +4,10 @@ import { Nav } from "react-bootstrap";
 
 const EmployeeMenu = () => {
 
+    const name = sessionStorage.getItem("name")
     return (
         <div className="container">
-            <h3>Welcome, Name</h3>
+            <h3>Welcome, {name}</h3>
             <p>Approve accounts, view deletion requests, view user reports, or search for a user.</p>
             <div class="user-menu">
                 <button class="btn btn-outline-secondary"><Nav.Link class="btn btn-outline-secondary" href="EmpApprove">Approval</Nav.Link></button>
