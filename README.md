@@ -27,8 +27,13 @@ Allows users to enter expenses and see monthly totals on their expenditures.  Us
 - Employees can view user report
 
 ## How to Get Started
-  Have Apache Tomcat 9.0 and Java 11 run time environment installed for the backend. For the frontend use npm install.
- git clone 
+ Have Apache Tomcat 9.0 and Java 11 run time environment installed for the backend. For the frontend use npm install.
+ git clone https://github.com/BrendaQu/project2-finance-tracker.git 
+ 
+## Usage
+Be sure to popular database with at least one user with type = employee;
+<img width="659" alt="image" src="https://user-images.githubusercontent.com/39780982/147151481-a163b4f2-9ba8-4425-a615-0bfd3b6fb9e6.png">
+
 
 ## Contributors
 - Brenda Quach
