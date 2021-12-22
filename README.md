@@ -27,8 +27,8 @@ Allows users to enter expenses and see monthly totals on their expenditures.  Us
 - Employees can view user report
 
 ## How to Get Started
-  Things to install 
-  - 
+  Have Apache Tomcat 9.0 and Java 11 run time environment installed for the backend. For the frontend use npm install.
+ git clone 
 
 ## Contributors
 - Brenda Quach
