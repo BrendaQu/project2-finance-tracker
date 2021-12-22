@@ -35,8 +35,17 @@ Allows users to enter expenses and see monthly totals on their expenditures.  Us
 <img width="659" alt="image" src="https://user-images.githubusercontent.com/39780982/147151481-a163b4f2-9ba8-4425-a615-0bfd3b6fb9e6.png">
 2. Click on the register link on the navagation bar to register as a new user or click login to log in as a current user.
 <img width="955" alt="image" src="https://user-images.githubusercontent.com/39780982/147152049-c1837ce7-b81d-4215-a311-59ac84a43342.png">
-3. User with employee roles will see the menu to approval accounts, delete accounts, view reports, and search for users. 
+3. Users with employee roles will see the menu to approval accounts, delete accounts, view reports, and search for users. 
 <img width="899" alt="image" src="https://user-images.githubusercontent.com/39780982/147152434-388d788e-a8a0-4b32-98de-434163af817f.png">
+4. Employees can view all user's average spending on each category in user reports. There is a bar graph and donut graph option
+<img width="508" alt="image" src="https://user-images.githubusercontent.com/39780982/147153195-bddfab24-312b-4e2b-81ed-ca733341ece7.png">
+<img width="508" alt="image" src="https://user-images.githubusercontent.com/39780982/147153297-95fd8342-d3df-42b1-81a2-ccd20dfb166f.png">
+5. Users with regular roles will see the menu to log expenses, set budget, and view reports.
+<img width="910" alt="image" src="https://user-images.githubusercontent.com/39780982/147152667-f0b75464-b2a5-4abb-910d-8326e746c164.png">
+6. After logging some expenses and setting budgets users can see more information in the reports section.
+<img width="511" alt="image" src="https://user-images.githubusercontent.com/39780982/147152930-1c9b1743-d993-4907-89a3-a8f6863f96aa.png">
+7. To log out click on user image on the navagation bar and select log out.
+<img width="364" alt="image" src="https://user-images.githubusercontent.com/39780982/147153457-55465b99-79dc-4caf-bf32-da185a396452.png">
 
 
 ## Contributors
