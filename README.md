@@ -29,6 +29,15 @@ Allows users to enter expenses and see monthly totals on their expenditures.  Us
 ## How to Get Started
  Have Apache Tomcat 9.0 and Java 11 run time environment installed for the backend. For the frontend use npm install.
  git clone https://github.com/BrendaQu/project2-finance-tracker.git 
+ You will also need to do the following npm commands:
+ npm i bootstrap
+ npm i react bootstrap
+ npm i chart.js
+ npm i chartjs-react
+ npm i font-awesome
+ npm i react-router
+ npm i axios
+ npm i react-social-icons
  
 ## Usage
 1. Be sure to populate database with at least one user with type = employee;
