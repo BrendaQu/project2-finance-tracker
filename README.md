@@ -47,7 +47,6 @@ Allows users to enter expenses and see monthly totals on their expenditures.  Us
 7. To log out click on user image on the navagation bar and select log out.
 <img width="364" alt="image" src="https://user-images.githubusercontent.com/39780982/147153457-55465b99-79dc-4caf-bf32-da185a396452.png">
 
-
 ## Contributors
 - Brenda Quach
 - Milton Baidoum
